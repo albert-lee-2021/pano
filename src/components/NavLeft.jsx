@@ -4,7 +4,7 @@ const NavLeft = () => {
     return (
         <div id="nav-left">
             <div style={{ margin: '1rem' }}>
-                {courses.map(name => <button>{name}</button>)}
+                {courses.map(name => <button key={name}>{name}</button>)}
             </div>
         </div>
     );

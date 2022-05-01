@@ -2,7 +2,7 @@ import * as PANOLENS from "panolens";
 import * as THREE from 'three';
 import { useEffect } from 'react';
 
-const Pano = ({ panoLoaded, setPanoLoaded }) => {
+const Pano = () => {
 
   useEffect(() => {
     const entrance = new PANOLENS.ImagePanorama("Entrancedownscale.jpg");
@@ -31,11 +31,12 @@ const Pano = ({ panoLoaded, setPanoLoaded }) => {
       autoRotateSpeed: .5,
       autoRotateActivationDuration: 10000,
       autoHideInfospot: false,
-      output: 'console',
+      // output: 'console',
     });
+
     viewer.add(entrance, stairs);
-    setPanoLoaded(true);
-  }, [panoLoaded, setPanoLoaded]);
+  }, []);
+
   return (
     <div id="container" style={{ height: "100%" }}>
     </div>
