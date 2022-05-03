@@ -1,12 +1,14 @@
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
+import entrance2 from './../assets/entrance.jpg';
+import stairs2 from './../assets/stairs.jpg';
 import { useEffect } from 'react';
 
 const Pano = () => {
 
   useEffect(() => {
-    const entrance = new PANOLENS.ImagePanorama("Entrancedownscale.jpg");
-    const stairs = new PANOLENS.ImagePanorama("stairs.jpg");
+    const entrance = new PANOLENS.ImagePanorama(entrance2);
+    const stairs = new PANOLENS.ImagePanorama(stairs2);
     // let infospot = new PANOLENS.Infospot(500, PANOLENS.DataImage.Info);
 
     // infospot.position.set(-100, -500, -5000);
