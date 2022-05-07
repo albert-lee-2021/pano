@@ -7,7 +7,7 @@ import PlanImage from './PlanImage';
 import PlanButton from './PlanButton';
 import { useState } from 'react';
 
-const NavTop = ({ setEntered }) => {
+const NavTop = () => {
   // let floors = ['Entrance', 'Floor2', 'Loftas', 'Floor 4', 'Floor F'];
   // let floors = ['E', 'L', 'F4', 'FF'];
   let floors = {
@@ -19,10 +19,6 @@ const NavTop = ({ setEntered }) => {
 
   const [open, setOpen] = useState(false);
   const [plan, setPlan] = useState(null);
-
-  let showPlan = (name) => {
-    console.log(name);
-  };
 
   return (
     <div id="nav-top">
