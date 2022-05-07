@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useEffect } from "react";
 
-const PlanButton = ({ x, y, name, clicked, setPlan, setClicked, floors }) => {
+const PlanButton = ({ x, y, name, open, setOpen, plan, setPlan, floors }) => {
+    
     return (
         <div>
-            <button style={{fontSize: '2rem'}} onClick={() => {
-                console.log('plan button clicked');
-                console.log(name);
-                setClicked(!clicked);
-                setPlan(floors[name])
-                console.log(clicked);
+            <button style={{fontSize: '2rem'}} onClick={e => {
+                console.log(plan);
+                if(!open) {
+                    setPlan(floors[name]);
+                    setOpen(true);
+                }
+
+                else if(plan === floors[name]) {
+                    setOpen(false);
+                }
+
+                else if(plan !== floors[name]) {
+                    setPlan(floors[name]);
+                    setOpen(true);
+                }
             }
             }>
                 {name}

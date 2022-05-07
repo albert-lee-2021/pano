@@ -17,7 +17,7 @@ const NavTop = ({ setEntered }) => {
     'FF': f
   }
 
-  const [clicked, setClicked] = useState(false);
+  const [open, setOpen] = useState(false);
   const [plan, setPlan] = useState(null);
 
   let showPlan = (name) => {
@@ -28,12 +28,12 @@ const NavTop = ({ setEntered }) => {
     <div id="nav-top">
       <div style={{ margin: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'end', width: '100vw' }}>
         {Object.keys(floors).map((name, i) =>
-          <PlanButton floors={floors} setPlan={setPlan} clicked={clicked} setClicked={setClicked} name={name} key={name + i}>
+          <PlanButton floors={floors} plan={plan}setPlan={setPlan} open={open} setOpen={setOpen} name={name} key={name + i}>
             {name}
           </PlanButton>
         )}
 
-        {clicked ? 
+        {open ? 
           <PlanImage image={plan}/> : ''
         }
 
