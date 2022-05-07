@@ -1,8 +1,8 @@
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
-import entrance2 from './../assets/entrance.jpg';
-import stairs2 from './../assets/stairs.jpg';
-import koridorius4ds from './../assets/koridorius4ds.jpg';
+import entrance2 from './../assets/panos/entrance.jpg';
+import stairs2 from './../assets/panos/stairs.jpg';
+import koridorius4ds from './../assets/panos/koridorius4ds.jpg';
 import { useEffect } from 'react';
 
 const Pano = () => {
