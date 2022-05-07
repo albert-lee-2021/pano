@@ -4,7 +4,7 @@ const Plan = ({image}) => {
 
     // make loftas floor plan wider by overriding default
     if(image.includes('loftas')) 
-        style = Object.assign({}, style, {width: '40rem'})
+        style = Object.assign({}, style, {width: '30rem'})
 
     // make four + f floor plan heightened by overriding default
     if(image.includes('media/f')) 
