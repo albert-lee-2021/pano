@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pano/static/css/main.0c2ea84c.css",
-    "main.js": "/pano/static/js/main.1ed79392.js",
+    "main.js": "/pano/static/js/main.84651106.js",
     "static/media/koridorius4ds.jpg": "/pano/static/media/koridorius4ds.7ceb09f7e7424c00404e.jpg",
     "static/media/stairs.jpg": "/pano/static/media/stairs.b3e54865510afa8df7bc.jpg",
     "static/media/entrance.jpg": "/pano/static/media/entrance.c445094fe78d60e2b980.jpg",
@@ -12,10 +12,10 @@
     "static/media/banner.png": "/pano/static/media/banner.02e10683a418b9df1e48.png",
     "index.html": "/pano/index.html",
     "main.0c2ea84c.css.map": "/pano/static/css/main.0c2ea84c.css.map",
-    "main.1ed79392.js.map": "/pano/static/js/main.1ed79392.js.map"
+    "main.84651106.js.map": "/pano/static/js/main.84651106.js.map"
   },
   "entrypoints": [
     "static/css/main.0c2ea84c.css",
-    "static/js/main.1ed79392.js"
+    "static/js/main.84651106.js"
   ]
 }
