@@ -1,11 +1,7 @@
-import { useEffect } from "react";
-
 const PlanButton = ({ x, y, name, open, setOpen, plan, setPlan, floors }) => {
-    
     return (
         <div>
             <button style={{fontSize: '2rem'}} onClick={e => {
-                console.log(plan);
                 if(!open) {
                     setPlan(floors[name]);
                     setOpen(true);
@@ -24,7 +20,6 @@ const PlanButton = ({ x, y, name, open, setOpen, plan, setPlan, floors }) => {
                 {name}
             </button>
         </div>
-
     );
 };
 

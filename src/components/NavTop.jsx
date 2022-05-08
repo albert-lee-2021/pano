@@ -7,7 +7,7 @@ import PlanImage from './PlanImage';
 import PlanButton from './PlanButton';
 import { useState } from 'react';
 
-const NavTop = () => {
+const NavTop = ({setEntered, viewer, allDots}) => {
   // let floors = ['Entrance', 'Floor2', 'Loftas', 'Floor 4', 'Floor F'];
   // let floors = ['E', 'L', 'F4', 'FF'];
   let floors = {
@@ -30,9 +30,10 @@ const NavTop = () => {
         )}
 
         {open ? 
-          <PlanImage image={plan}/> : ''
+            <PlanImage viewer={viewer} allDots={allDots} image={plan}/>: ''
         }
 
+        <button onClick={() => setEntered(false)}>Exit</button>
       </div>
     </div>
   );
