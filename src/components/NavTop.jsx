@@ -3,17 +3,18 @@ import loftas from '../assets/floor-plans/loftas.png';
 import four from '../assets/floor-plans/four.png';
 import f from '../assets/floor-plans/f.png';
 
-import PlanImage from './PlanImage';
-import PlanButton from './PlanButton';
+// import PlanImage from './PlanImage';
+// import PlanButton from './PlanButton';
 import { useState } from 'react';
+import PlanButtonContainer from './PlanButtonContainer';
 
-const NavTop = ({setEntered, viewer, allDots}) => {
+const NavTop = ({ setEntered, viewer, allDots }) => {
   // let floors = ['Entrance', 'Floor2', 'Loftas', 'Floor 4', 'Floor F'];
   // let floors = ['E', 'L', 'F4', 'FF'];
   let floors = {
     'E': entrance,
     'L': loftas,
-    'F4': four, 
+    'F4': four,
     'FF': f
   }
 
@@ -22,19 +23,7 @@ const NavTop = ({setEntered, viewer, allDots}) => {
 
   return (
     <div id="nav-top">
-      <div style={{ margin: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'end', width: '100vw' }}>
-        {Object.keys(floors).map((name, i) =>
-          <PlanButton floors={floors} plan={plan}setPlan={setPlan} open={open} setOpen={setOpen} name={name} key={name + i}>
-            {name}
-          </PlanButton>
-        )}
-
-        {open ? 
-            <PlanImage viewer={viewer} allDots={allDots} image={plan}/>: ''
-        }
-
-        <button onClick={() => setEntered(false)}>Exit</button>
-      </div>
+      <PlanButtonContainer setEntered={setEntered} allDots={allDots} viewer={viewer} floors={floors} plan={plan} setPlan={setPlan} open={open} setOpen={setOpen} />
     </div>
   );
 };

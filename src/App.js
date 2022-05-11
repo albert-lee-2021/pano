@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import NavTop from './components/NavTop';
 import NavLeft from './components/NavLeft';
 import Banner from './components/Banner';

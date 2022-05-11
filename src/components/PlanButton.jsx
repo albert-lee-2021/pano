@@ -1,24 +1,50 @@
-const PlanButton = ({ x, y, name, open, setOpen, plan, setPlan, floors }) => {
+import { useState } from "react";
+
+const PlanButton = ({ x, y, anyClicked, setAnyClicked, name, plan, setPlan, floors }) => {
+    const [cn, setCn] = useState('btn');
+    const [open, setOpen] = useState(false);
+
+    let handleClick = e => {
+        if(anyClicked) {
+            setAnyClicked(false);
+        }
+        if (!open) {
+            setCn('test btn')
+            setPlan(floors[name]);
+            setOpen(true);
+            setAnyClicked(true);
+        }
+        else if (plan === floors[name]) {
+            setCn('btn');
+            setOpen(false);
+        }
+        else if (plan !== floors[name] && open) {
+            console.log(plan)
+            console.log(floors[name])
+            console.log('test')
+            setCn('test btn');
+            setPlan(floors[name]);
+            setOpen(true);
+        }
+        else if (plan !== floors[name]) {
+            setCn('test btn');
+            setPlan(floors[name]);
+            setOpen(true);
+        }
+    }
+
     return (
         <div>
-            <button style={{fontSize: '2rem'}} onClick={e => {
-                if(!open) {
-                    setPlan(floors[name]);
-                    setOpen(true);
-                }
-
-                else if(plan === floors[name]) {
-                    setOpen(false);
-                }
-
-                else if(plan !== floors[name]) {
-                    setPlan(floors[name]);
-                    setOpen(true);
-                }
-            }
-            }>
+            {/* <button style={{fontSize: '2rem'}} onClick={handleClick}>
                 {name}
-            </button>
+            </button> */}
+            {/* <div className={open ? "test btn" : "btn"} class="btn" onClick={handleClick}> */}
+            <div className={cn} onClick={handleClick}>
+                <svg>
+                    <rect x="0" y="0" fill="none" width="166" height="45" />
+                </svg>
+                {name}
+            </div>
         </div>
     );
 };

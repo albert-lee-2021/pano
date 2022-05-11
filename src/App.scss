@@ -1,3 +1,6 @@
+@import "bourbon";
+
+
 #container {
   position: absolute;
   height: 100vh;
@@ -82,4 +85,39 @@ button {
   border-radius: 50%;
   border: 2px solid magenta;
   z-index: 10;
+}
+
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 166px;
+  height: 45px;
+  font-size: 14px;
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn svg {
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.btn svg rect {
+  stroke: #ffffff;
+  stroke-width: 6;
+  stroke-dasharray: 422, 0;
+  stroke-dashoffset: 0;
+  
+  // @include transition(all 900ms $ease-out-expo);
+}
+
+.test svg rect {
+  stroke-width: 10;
+  stroke-dasharray: 110, 312;
+  stroke-dashoffset: 183;
 }
