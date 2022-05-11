@@ -1,21 +1,33 @@
 {
   "files": {
-    "main.css": "/pano/static/css/main.3ba88971.css",
-    "main.js": "/pano/static/js/main.e62acdfa.js",
+    "main.css": "/pano/static/css/main.64933bfe.css",
+    "main.js": "/pano/static/js/main.e86a9ee0.js",
+    "static/media/fourfive.jpg": "/pano/static/media/fourfive.a292e78fd1121a35dd47.jpg",
+    "static/media/fourthree.jpg": "/pano/static/media/fourthree.c7aa3546026f23a66d21.jpg",
     "static/media/koridorius4ds.jpg": "/pano/static/media/koridorius4ds.7ceb09f7e7424c00404e.jpg",
+    "static/media/koridorius42.jpg": "/pano/static/media/koridorius42.48d1a975acb09338d989.jpg",
     "static/media/stairs.jpg": "/pano/static/media/stairs.b3e54865510afa8df7bc.jpg",
     "static/media/entrance.jpg": "/pano/static/media/entrance.c445094fe78d60e2b980.jpg",
+    "static/media/loftas22.jpg": "/pano/static/media/loftas22.e24ff740333b94694dd6.jpg",
+    "static/media/fourtwo.jpg": "/pano/static/media/fourtwo.4d0a3977198e0c5133db.jpg",
+    "static/media/outside.jpg": "/pano/static/media/outside.f85ec019ba01eae0ecef.jpg",
+    "static/media/tiltas.jpg": "/pano/static/media/tiltas.30c80d74afb20f9ec2a1.jpg",
+    "static/media/loftas32.jpg": "/pano/static/media/loftas32.360eb06ae5143a2302aa.jpg",
+    "static/media/loftas12.jpg": "/pano/static/media/loftas12.5c7a4009964d4b3df05b.jpg",
+    "static/media/fourfour.jpg": "/pano/static/media/fourfour.de4a0c78195d2ac52d4d.jpg",
+    "static/media/fourone.jpg": "/pano/static/media/fourone.48ebb297e0755a7ca476.jpg",
+    "static/media/fourfloorstairss.jpg": "/pano/static/media/fourfloorstairss.3e59be5248f81dac4dd5.jpg",
     "static/media/loftas.png": "/pano/static/media/loftas.03eba16bd0b638d9bfc1.png",
     "static/media/f.png": "/pano/static/media/f.3a7e5364b0183bf71379.png",
     "static/media/four.png": "/pano/static/media/four.20b5cacbb091e81ce779.png",
     "static/media/entrance.png": "/pano/static/media/entrance.b11e63af6c0d3cc2c277.png",
     "static/media/banner.png": "/pano/static/media/banner.02e10683a418b9df1e48.png",
     "index.html": "/pano/index.html",
-    "main.3ba88971.css.map": "/pano/static/css/main.3ba88971.css.map",
-    "main.e62acdfa.js.map": "/pano/static/js/main.e62acdfa.js.map"
+    "main.64933bfe.css.map": "/pano/static/css/main.64933bfe.css.map",
+    "main.e86a9ee0.js.map": "/pano/static/js/main.e86a9ee0.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ba88971.css",
-    "static/js/main.e62acdfa.js"
+    "static/css/main.64933bfe.css",
+    "static/js/main.e86a9ee0.js"
   ]
 }
