@@ -123,8 +123,9 @@ function App() {
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
     //origin.link(destination, ...)
+    
     entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));
-    entrance.link(koridorius4, new THREE.Vector3(-4798.75, -557.63, -1247.87));
+    entrance.link(koridorius4, new THREE.Vector3(-4843.61, -276.14, -1173.57));
     stairs.link(entrance, new THREE.Vector3(3725.45, -3094.47, 1225.24));
     stairs.link(entrance, new THREE.Vector3(4954.39, 531.99, -260.74));
   
