@@ -15,7 +15,9 @@ import fourfive from './assets/panos/fourfive.jpg';
 import fourone from './assets/panos/fourone.jpg';
 import fourtwo from './assets/panos/fourtwo.jpg';
 import fourthree from './assets/panos/fourthree.jpg';
-
+import loftas12 from './assets/panos/loftas12.jpg';
+import loftas22 from './assets/panos/loftas22.jpg';
+import loftas32 from './assets/panos/loftas32.jpg';
 
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
@@ -36,6 +38,9 @@ function App() {
   const fourdotone = useMemo(() => new PANOLENS.ImagePanorama(fourone), []);
   const fourdottwo = useMemo(() => new PANOLENS.ImagePanorama(fourtwo), []);
   const fourdotthree = useMemo(() => new PANOLENS.ImagePanorama(fourthree), []);
+  const loftas1 = useMemo(() => new PANOLENS.ImagePanorama(loftas12), []);
+  const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
+  const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
 
   const[allDots] = useState({
     'entrance': [
@@ -80,13 +85,13 @@ function App() {
     ],
     'loftas': [
         // dot 1 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: tiltas2, clicked: false},
         // dot 2 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas1, clicked: false},
         // dot 3 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas2, clicked: false},
         // dot 4 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas3, clicked: false},
         // dot 5 for loftas pano
         {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
         // dot 6 for loftas pano
@@ -153,7 +158,17 @@ function App() {
     stairs.link(tiltas2, new THREE.Vector3(4954.39, 531.99, -260.74)); //up
     tiltas2.link(stairs, new THREE.Vector3(-4873.73, -756.40, -773.44)); //down
     tiltas2.link(fourfloorstairs, new THREE.Vector3(-4941.29, -748.93, -20.76)); //up
+    tiltas2.link(loftas1, new THREE.Vector3(4734.32, -1531.18, -474.88)); //tiltas > loftas 
+    loftas1.link(tiltas2, new THREE.Vector3(-4171.12, -1991.75, -1895.44)); //loftas > tiltas
 
+
+    //floorL
+    loftas1.link(loftas2, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 1>2
+    loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); //loftas 2>1
+    loftas2.link(loftas3, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 2>3
+    loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); //loftas 3>2
+
+    //     .link(, new THREE.Vector3()); //
     //floor 4
     fourfloorstairs.link(koridorius4, new THREE.Vector3(-3943.38, -312.74, 3045.03));
     fourfloorstairs.link(fourdotfour, new THREE.Vector3(218.49, -1669.38, -4697.98));
@@ -174,8 +189,8 @@ function App() {
     fourdotthree.link(fourdotfive, new THREE.Vector3(-997.88, -3522.27, -3400.54)); //4.3 > 4.5
 
     //  
-    viewer.current.add(entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, tiltas2);
-  }, [entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, viewer]);
+    viewer.current.add(entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, tiltas2);
+  }, [entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, viewer]);
   
   useEffect(() => {
     ('effect2');
