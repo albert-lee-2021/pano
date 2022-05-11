@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const PlanButton = ({ x, y, anyClicked, setAnyClicked, name, plan, setPlan, floors }) => {
+const PlanButton = ({ x, y, anyClicked, setAnyClicked, name, plan, setPlan, floors, open, setOpen }) => {
     const [cn, setCn] = useState('btn');
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
 
     let handleClick = e => {
         if(anyClicked) {

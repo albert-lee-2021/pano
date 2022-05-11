@@ -4,7 +4,6 @@ import PlanImage from './PlanImage';
 
 const PlanButtonContainer = ({ setEntered, viewer, allDots, floors, plan, setPlan, open, setOpen }) => {
     const [anyClicked, setAnyClicked] = useState('false');
-
     return (
         <div style={{ margin: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'end', width: '100vw' }}>
             {Object.keys(floors).map((name, i) =>
@@ -13,7 +12,7 @@ const PlanButtonContainer = ({ setEntered, viewer, allDots, floors, plan, setPla
                 </PlanButton>
             )}
             {open ?
-                <PlanImage viewer={viewer} allDots={allDots} image={plan} /> : ''
+                <PlanImage viewer={viewer} allDots={allDots} plan={plan} /> : ''
             }
             <button onClick={() => setEntered(false)}>Exit</button>
         </div>
