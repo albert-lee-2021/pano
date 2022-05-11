@@ -1,11 +1,10 @@
+import { useState } from 'react';
+
 import entrance from '../assets/floor-plans/entrance.png';
 import loftas from '../assets/floor-plans/loftas.png';
 import four from '../assets/floor-plans/four.png';
 import f from '../assets/floor-plans/f.png';
 
-// import PlanImage from './PlanImage';
-// import PlanButton from './PlanButton';
-import { useState } from 'react';
 import PlanButtonContainer from './PlanButtonContainer';
 
 const NavTop = ({ setEntered, viewer, allDots }) => {
