@@ -9,6 +9,9 @@ import { useState } from 'react';
 import PlanButtonContainer from './PlanButtonContainer';
 
 const NavTop = ({ setEntered, viewer, allDots }) => {
+  const [open, setOpen] = useState(false);
+  const [plan, setPlan] = useState(null);
+
   // let floors = ['Entrance', 'Floor2', 'Loftas', 'Floor 4', 'Floor F'];
   // let floors = ['E', 'L', 'F4', 'FF'];
   let floors = {
@@ -17,9 +20,6 @@ const NavTop = ({ setEntered, viewer, allDots }) => {
     'F4': four,
     'FF': f
   }
-
-  const [open, setOpen] = useState(false);
-  const [plan, setPlan] = useState(null);
 
   return (
     <div id="nav-top">
