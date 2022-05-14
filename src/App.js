@@ -31,7 +31,7 @@ function App() {
     if (canvases.length === 1) {
       const canvas = canvases[0];
       canvas.addEventListener('webglcontextlost', (event) => {
-        window.location.reload();
+        window.location.href = window.location.href;
       });
     }
   }
@@ -193,17 +193,11 @@ function App() {
     })
   );
 
-  useEffect(() => {
-    setTimeout(() => { 
-      addCanvasWebGLContextLossEventListener();
-    }, 2500);
-    return () => removeCanvasWebGLContextLossEventListener();
-  }, [])
-
+  
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
     //origin.link(destination, ...)
-
+    
     entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));
     entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57)); //out
     outside2.link(entrance, new THREE.Vector3(4955.37, 630.34, -19.82)); //in
@@ -213,14 +207,14 @@ function App() {
     tiltas2.link(fourfloorstairs, new THREE.Vector3(-4941.29, -748.93, -20.76)); //up
     tiltas2.link(loftas1, new THREE.Vector3(4734.32, -1531.18, -474.88)); //tiltas > loftas 
     loftas1.link(tiltas2, new THREE.Vector3(-4171.12, -1991.75, -1895.44)); //loftas > tiltas
-
-
+    
+    
     //floorL
     loftas1.link(loftas2, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 1>2
     loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); //loftas 2>1
     loftas2.link(loftas3, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 2>3
     loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); //loftas 3>2
-
+    
     //     .link(, new THREE.Vector3()); //
     //floor 4
     fourfloorstairs.link(koridorius4, new THREE.Vector3(-3943.38, -312.74, 3045.03));
@@ -240,11 +234,22 @@ function App() {
     koridorius4d2.link(fourdotthree, new THREE.Vector3(-4827.34, -798.85, -1025.67));
     fourdotthree.link(koridorius4d2, new THREE.Vector3(-4900.69, -870.69, 384.46)); //4.3 out
     fourdotthree.link(fourdotfive, new THREE.Vector3(-997.88, -3522.27, -3400.54)); //4.3 > 4.5
-
+    
     //  
     viewer.current.add(entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, tiltas2);
   }, [entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, viewer]);
 
+  useEffect(() => {
+    setTimeout(() => { 
+      console.log('add contxt lost listener')
+      addCanvasWebGLContextLossEventListener();
+    }, 2500);
+    if(sessionStorage.getItem('opened')) setEntered(true);
+    return () => {
+      console.log('remove contxt lost listener')
+      removeCanvasWebGLContextLossEventListener()};
+    }, [])
+  
   useEffect(() => {
     if (entered) {
       //show pano
@@ -260,12 +265,9 @@ function App() {
       // remove duplicate canvas
       let c = Array.from(document.querySelector('#container').children);
       for (let i = 3; i < c.length; i++) {
-          if (!c[i].className.includes('infospot')) {
-            console.log('removing')
-            c[i].remove();
-          }
-        }
+        if (!c[i].className.includes('infospot')) c[i].remove();
       }
+    } 
   }, [entered])
 
   return (
