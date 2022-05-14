@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pano/static/css/main.64933bfe.css",
-    "main.js": "/pano/static/js/main.e86a9ee0.js",
+    "main.css": "/pano/static/css/main.2fd03c4a.css",
+    "main.js": "/pano/static/js/main.3bd5854c.js",
     "static/media/fourfive.jpg": "/pano/static/media/fourfive.a292e78fd1121a35dd47.jpg",
     "static/media/fourthree.jpg": "/pano/static/media/fourthree.c7aa3546026f23a66d21.jpg",
     "static/media/koridorius4ds.jpg": "/pano/static/media/koridorius4ds.7ceb09f7e7424c00404e.jpg",
@@ -17,17 +17,16 @@
     "static/media/fourfour.jpg": "/pano/static/media/fourfour.de4a0c78195d2ac52d4d.jpg",
     "static/media/fourone.jpg": "/pano/static/media/fourone.48ebb297e0755a7ca476.jpg",
     "static/media/fourfloorstairss.jpg": "/pano/static/media/fourfloorstairss.3e59be5248f81dac4dd5.jpg",
-    "static/media/loftas.png": "/pano/static/media/loftas.03eba16bd0b638d9bfc1.png",
-    "static/media/f.png": "/pano/static/media/f.3a7e5364b0183bf71379.png",
-    "static/media/four.png": "/pano/static/media/four.20b5cacbb091e81ce779.png",
+    "static/media/loftas.png": "/pano/static/media/loftas.6b8dfb703997f2baf18d.png",
+    "static/media/f.png": "/pano/static/media/f.4503c775336676116621.png",
+    "static/media/four.png": "/pano/static/media/four.ca285a7c5220ea7654fe.png",
     "static/media/entrance.png": "/pano/static/media/entrance.b11e63af6c0d3cc2c277.png",
-    "static/media/banner.png": "/pano/static/media/banner.02e10683a418b9df1e48.png",
     "index.html": "/pano/index.html",
-    "main.64933bfe.css.map": "/pano/static/css/main.64933bfe.css.map",
-    "main.e86a9ee0.js.map": "/pano/static/js/main.e86a9ee0.js.map"
+    "main.2fd03c4a.css.map": "/pano/static/css/main.2fd03c4a.css.map",
+    "main.3bd5854c.js.map": "/pano/static/js/main.3bd5854c.js.map"
   },
   "entrypoints": [
-    "static/css/main.64933bfe.css",
-    "static/js/main.e86a9ee0.js"
+    "static/css/main.2fd03c4a.css",
+    "static/js/main.3bd5854c.js"
   ]
 }
