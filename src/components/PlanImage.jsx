@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 
 const PlanImage = ({plan, allDots, viewer}) => {
     //default style
-    let style = {position: 'fixed', top: '4rem', width: 'auto', height: '10rem', zIndex: 1}
+    let style = {position: 'fixed', top: '5rem', width: 'auto', height: '10rem', zIndex: 1}
     const [dotMatch, setDotMatch] = useState('entrance');
 
     // make loftas floor plan wider by overriding default
     if(plan.includes('loftas')) 
-        style = Object.assign({}, style, {width: '30rem'})
+        style = Object.assign({}, style, {height: '12rem', width: '41rem'})
     // make f and four floor plan heightened by overriding default
     else if(plan.includes('media/f')) {
-        style = Object.assign({}, style, {width: '20rem', height: 'auto'})
+        style = Object.assign({}, style, {width: '14rem', height: 'auto'})
     }
 
     useEffect(() => {
