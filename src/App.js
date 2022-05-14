@@ -31,9 +31,6 @@ let panoWithInfoSpots = (image, infospots) => {
   //set all infospots given for that pano
   //can also customize size, vertical distance, image of infospot
   for (let i = 0; i < infospots.length; i++) {
-    console.log(infospots[i].coords[0])
-    console.log(infospots[i].text)
-    // console.log(infospots[i)
     let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
     infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
     infospot.addHoverText(infospots[i].text, 50);
