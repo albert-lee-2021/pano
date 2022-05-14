@@ -25,8 +25,37 @@ import * as THREE from 'three';
 import { useEffect, useMemo, useRef, useState } from "react";
 
 
+let panoWithInfoSpots = (image, infospots) => {
+  let pano = new PANOLENS.ImagePanorama(image);
+
+  //set all infospots given for that pano
+  //can also customize size, vertical distance, image of infospot
+  for (let i = 0; i < infospots.length; i++) {
+    console.log(infospots[i].coords[0])
+    console.log(infospots[i].text)
+    // console.log(infospots[i)
+    let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+    infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
+    infospot.addHoverText(infospots[i].text, 50);
+    pano.add(infospot);
+  }
+  return pano;
+}
+
 function App() {
-  const entrance = useMemo(() => new PANOLENS.ImagePanorama(entrance2), []);
+  const entrance = useMemo(() => panoWithInfoSpots(
+    entrance2,
+    [
+      {
+        coords: [413.25, -217.35, -4969.80],
+        text: 'spot 1'
+      },
+      {
+        coords: [-1313.88, -1728.78, -4494.17],
+        text: 'spot 2'
+      },
+    ]
+  ), []);
   const stairs = useMemo(() => new PANOLENS.ImagePanorama(stairs2), []);
   const koridorius4 = useMemo(() => new PANOLENS.ImagePanorama(koridorius4ds), []);
   const outside2 = useMemo(() => new PANOLENS.ImagePanorama(outside), []);
@@ -42,94 +71,94 @@ function App() {
   const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
   const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
 
-  const[allDots] = useState({
+  const [allDots] = useState({
     'entrance': [
       // dot 1 for entrance pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: entrance, clicked: true},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: entrance, clicked: true },
       // dot 2 for entrance pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: stairs, clicked: false},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: stairs, clicked: false },
       // dot 3 for entrance pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: outside2, clicked: false}
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: outside2, clicked: false }
     ],
     'f': [
       // dot 1 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
       // dot 2 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
       // dot 3 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
       // dot 4 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
       // dot 5 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
       // dot 6 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
       // dot 7 for f pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'}
-    ], 
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' }
+    ],
     'four': [
       // dot 1 for four pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourfloorstairs, clicked: false},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourfloorstairs, clicked: false },
       // dot 2 for four pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: koridorius4, clicked: false},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: koridorius4, clicked: false },
       // dot 3 for four pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: koridorius4d2, clicked: false},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: koridorius4d2, clicked: false },
       // dot 4 for four pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourdotone, clicked: false},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourdotone, clicked: false },
       // dot 5 for four pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourdottwo, clicked: false},
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourdottwo, clicked: false },
       // dot 6 for four pano
-      {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourdotthree, clicked: false}
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fourdotthree, clicked: false }
 
 
     ],
     'loftas': [
-        // dot 1 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: tiltas2, clicked: false},
-        // dot 2 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas1, clicked: false},
-        // dot 3 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas2, clicked: false},
-        // dot 4 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas3, clicked: false},
-        // dot 5 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 6 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 7 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 8 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 9 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 10 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 11 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 12 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 13 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 14 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 15 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 16 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 17 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 18 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 19 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 20 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 21 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 22 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'},
-        // dot 23 for loftas pano
-        {top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder'}
+      // dot 1 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: tiltas2, clicked: false },
+      // dot 2 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas1, clicked: false },
+      // dot 3 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas2, clicked: false },
+      // dot 4 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: loftas3, clicked: false },
+      // dot 5 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 6 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 7 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 8 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 9 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 10 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 11 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 12 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 13 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 14 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 15 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 16 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 17 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 18 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 19 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 20 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 21 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 22 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      // dot 23 for loftas pano
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' }
     ]
   })
 
@@ -143,14 +172,14 @@ function App() {
       autoRotateSpeed: .5,
       autoRotateActivationDuration: 10000,
       autoHideInfospot: false,
-      output: 'console' 
+      output: 'console'
     })
   );
 
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
     //origin.link(destination, ...)
-    
+
     entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));
     entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57)); //out
     outside2.link(entrance, new THREE.Vector3(4955.37, 630.34, -19.82)); //in
@@ -173,10 +202,10 @@ function App() {
     fourfloorstairs.link(koridorius4, new THREE.Vector3(-3943.38, -312.74, 3045.03));
     fourfloorstairs.link(fourdotfour, new THREE.Vector3(218.49, -1669.38, -4697.98));
     fourfloorstairs.link(tiltas2, new THREE.Vector3(2943.27, -3890.67, 1067.96));
-    koridorius4.link(fourfloorstairs, new THREE.Vector3(4204.75, -866.53, -2549.42)); 
+    koridorius4.link(fourfloorstairs, new THREE.Vector3(4204.75, -866.53, -2549.42));
     fourdotfour.link(fourfloorstairs, new THREE.Vector3(4787.39, -775.48, -1190.78)); //4.4 out
     koridorius4.link(koridorius4d2, new THREE.Vector3(-4894.50, -640.35, 729.99));
-    koridorius4.link(fourdotfive, new THREE.Vector3(2328.11, -2134.52, 3867.19)); 
+    koridorius4.link(fourdotfive, new THREE.Vector3(2328.11, -2134.52, 3867.19));
     fourdotfive.link(koridorius4, new THREE.Vector3(1531.36, -825.21, 4685.55)); //4.5 out
     fourdotfive.link(fourdotthree, new THREE.Vector3(4600.09, -930.60, 1695.57)); //4.5 > 4.3
     koridorius4d2.link(koridorius4, new THREE.Vector3(-4975.22, -391.26, 179.52));
@@ -191,27 +220,26 @@ function App() {
     //  
     viewer.current.add(entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, tiltas2);
   }, [entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, viewer]);
-  
+
   useEffect(() => {
-    ('effect2');
-    if(entered) {
+    if (entered) {
       //show pano
       document.getElementById('container').className = '';
-    } else if(!entered) {
+    } else if (!entered) {
       //hide pano
       document.getElementById('container').className = 'display-none';
     }
     return () => {
       //cleanup duplicate panos
-      Array.from(document.querySelector('#container').children).slice(3, 100).forEach(el => el.remove())
+      Array.from(document.querySelector('#container').children).slice(4, 100).forEach(el => el.remove())
       Array.from(document.querySelector('#panolens-style-addon').children).slice(0, 100).forEach(el => el.remove())
     }
   }, [entered])
 
   return (
     <>
-      {entered ? '' : <Banner entered={entered} setEntered={setEntered}/>}
-      {entered ? <NavTop allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered}/> : ''}
+      {entered ? '' : <Banner entered={entered} setEntered={setEntered} />}
+      {entered ? <NavTop allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
       {entered ? <NavLeft /> : ''}
     </>
   );
