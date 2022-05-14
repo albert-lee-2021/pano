@@ -4,7 +4,10 @@ const Banner = ({entered, setEntered}) => {
     return (
         <div id="banner">
             <img src={banner} alt=""/>
-            <button onClick={() => setEntered(!entered)}>Enter site</button>
+            <button onClick={() => {
+                sessionStorage.setItem('opened', true);
+                setEntered(!entered)
+            }}>Enter site</button>
         </div>
     );
   };
