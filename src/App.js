@@ -24,25 +24,45 @@ import * as THREE from 'three';
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-
-let panoWithInfoSpots = (image, infospots) => {
-  let pano = new PANOLENS.ImagePanorama(image);
-
-  //set all infospots given for that pano
-  //can also customize size, vertical distance, image of infospot
-  for (let i = 0; i < infospots.length; i++) {
-    let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-    infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
-    infospot.addHoverText(infospots[i].text, 50);
-    pano.add(infospot);
-  }
-  return pano;
-}
-
 function App() {
+
+  let addCanvasWebGLContextLossEventListener = () => {
+    const canvases = document.getElementsByTagName("canvas");
+    if (canvases.length === 1) {
+      const canvas = canvases[0];
+      canvas.addEventListener('webglcontextlost', (event) => {
+        window.location.reload();
+      });
+    }
+  }
+
+  let removeCanvasWebGLContextLossEventListener = () => {
+    const canvases = document.getElementsByTagName("canvas");
+    if (canvases.length === 1) {
+      const canvas = canvases[0];
+      canvas.removeEventListener('webglcontextlost');
+    }
+  }
+
+  let panoWithInfoSpots = (image, infospots) => {
+    let pano = new PANOLENS.ImagePanorama(image);
+    for (let i = 0; i < infospots.length; i++) {
+
+      //the 350 on the next line changes the infospot size
+      let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+      infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
+
+      //the 50 on the next line represents vertical height from pano
+      infospot.addHoverText(infospots[i].text, 50);
+      pano.add(infospot);
+    }
+    return pano;
+  }
+
   const entrance = useMemo(() => panoWithInfoSpots(
     entrance2,
     [
+      //entrance info spots
       {
         coords: [413.25, -217.35, -4969.80],
         text: 'spot 1'
@@ -174,6 +194,13 @@ function App() {
   );
 
   useEffect(() => {
+    setTimeout(() => { 
+      addCanvasWebGLContextLossEventListener();
+    }, 2500);
+    return () => removeCanvasWebGLContextLossEventListener();
+  }, [])
+
+  useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
     //origin.link(destination, ...)
 
@@ -227,10 +254,18 @@ function App() {
       document.getElementById('container').className = 'display-none';
     }
     return () => {
-      //cleanup duplicate panos
-      Array.from(document.querySelector('#container').children).slice(4, 100).forEach(el => el.remove())
-      Array.from(document.querySelector('#panolens-style-addon').children).slice(0, 100).forEach(el => el.remove())
-    }
+      //cleanup duplicate styles
+      Array.from(document.querySelectorAll('#panolens-style-addon')).slice(1, 100).forEach(el => el.remove());
+
+      // remove duplicate canvas
+      let c = Array.from(document.querySelector('#container').children);
+      for (let i = 3; i < c.length; i++) {
+          if (!c[i].className.includes('infospot')) {
+            console.log('removing')
+            c[i].remove();
+          }
+        }
+      }
   }, [entered])
 
   return (
