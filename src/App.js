@@ -18,11 +18,25 @@ import fourthree from './assets/panos/fourthree.jpg';
 import loftas12 from './assets/panos/loftas12.jpg';
 import loftas22 from './assets/panos/loftas22.jpg';
 import loftas32 from './assets/panos/loftas32.jpg';
+import fentrances from './assets/panos/fentrance.jpg';
+import fcenters from './assets/panos/fcenter.jpg';
+import f1s from './assets/panos/f1.jpg';
+import f2s from './assets/panos/f2.jpg';
+import f3s from './assets/panos/f3.jpg';
+import f4s from './assets/panos/f4.jpg';
+import f5s from './assets/panos/f5.jpg';
+import loftoranas1d from './assets/panos/loftoranas1.jpg';
+import loftoranas2d from './assets/panos/loftoranas2.jpg';
+import libraryd1 from './assets/panos/library1.jpg';
+import libraryd2 from './assets/panos/library2.jpg';
+
+// import  from './assets/panos/.jpg';
 
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { RGBA_ASTC_10x5_Format } from 'three';
 
 function App() {
 
@@ -87,6 +101,19 @@ function App() {
   const loftas1 = useMemo(() => new PANOLENS.ImagePanorama(loftas12), []);
   const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
   const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
+  const fentrance = useMemo(() => new PANOLENS.ImagePanorama(fentrances), []);
+  const fcenter = useMemo(() => new PANOLENS.ImagePanorama(fcenters), []);
+  const f1 = useMemo(() => new PANOLENS.ImagePanorama(f1s), []);
+  const f2 = useMemo(() => new PANOLENS.ImagePanorama(f2s), []);
+  const f3 = useMemo(() => new PANOLENS.ImagePanorama(f3s), []);
+  const f4 = useMemo(() => new PANOLENS.ImagePanorama(f4s), []);
+  const f5 = useMemo(() => new PANOLENS.ImagePanorama(f5s), []);
+  const loftoranas1 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas1d), []);
+  const loftoranas2 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas2d), []);
+  const library1 = useMemo(() => new PANOLENS.ImagePanorama(libraryd1), []);
+  const library2 = useMemo(() => new PANOLENS.ImagePanorama(libraryd2), []);
+
+  // const  = useMemo(() => new PANOLENS.ImagePanorama(), []);
 
   const [allDots] = useState({
     'entrance': [
@@ -99,19 +126,19 @@ function App() {
     ],
     'f': [
       // dot 1 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fentrance, clicked: false },
       // dot 2 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: fcenter, clicked: false },
       // dot 3 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: f1, clicked: false },
       // dot 4 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: f2, clicked: false },
       // dot 5 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: f3, clicked: false },
       // dot 6 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' },
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: f4, clicked: false },
       // dot 7 for f pano
-      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: 'placeholder' }
+      { top: '10rem', bottom: '10rem', left: '10rem', right: '10rem', destination: f5, clicked: false }
     ],
     'four': [
       // dot 1 for four pano
@@ -208,13 +235,24 @@ function App() {
     tiltas2.link(loftas1, new THREE.Vector3(4734.32, -1531.18, -474.88)); //tiltas > loftas 
     loftas1.link(tiltas2, new THREE.Vector3(-4171.12, -1991.75, -1895.44)); //loftas > tiltas
     
-    
     //floorL
     loftas1.link(loftas2, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 1>2
     loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); //loftas 2>1
     loftas2.link(loftas3, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 2>3
     loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); //loftas 3>2
-    
+    loftas3.link(loftoranas2, new THREE.Vector3(-1200.96, -1406.38, 4634.93));
+    loftas2.link(loftoranas1, new THREE.Vector3(-231.37, -1376.61, 4790.67)); 
+    loftas2.link(loftoranas2, new THREE.Vector3(4038.42, -1245.60, 2655.35)); 
+    loftoranas1.link(loftas2, new THREE.Vector3(-231.37, -1376.61, 4790.67)); 
+    loftoranas1.link(loftoranas2, new THREE.Vector3(-4699.17, -1266.09, -1113.90)); 
+    loftoranas2.link(loftas2, new THREE.Vector3(3551.28, -858.46, -3401.73)); 
+    loftoranas2.link(loftas3, new THREE.Vector3(4792.60, -1368.03, -240.68)); 
+    loftoranas2.link(loftoranas1, new THREE.Vector3(-81.60, -1242.02, -4836.48)); 
+    loftoranas2.link(library1, new THREE.Vector3(-2932.67, -1154.00, 3876.01)); //
+    library1.link(loftoranas2, new THREE.Vector3(-941.27, -652.66, 4859.56)); //
+    library1.link(library2, new THREE.Vector3(-1763.61, -1224.34, -4506.39)); //
+    library2.link(library1, new THREE.Vector3(154.43, -1267.75, -4825.41)); //
+
     //     .link(, new THREE.Vector3()); //
     //floor 4
     fourfloorstairs.link(koridorius4, new THREE.Vector3(-3943.38, -312.74, 3045.03));
@@ -235,9 +273,23 @@ function App() {
     fourdotthree.link(koridorius4d2, new THREE.Vector3(-4900.69, -870.69, 384.46)); //4.3 out
     fourdotthree.link(fourdotfive, new THREE.Vector3(-997.88, -3522.27, -3400.54)); //4.3 > 4.5
     
-    //  
-    viewer.current.add(entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, tiltas2);
-  }, [entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, viewer]);
+    //Photo floor
+    outside2.link(fentrance, new THREE.Vector3(443.24, 53.71, 4974.66)); 
+    fentrance.link(outside2, new THREE.Vector3(-4415.62, 1558.35, -1734.37)); // to college entrance
+    fentrance.link(fcenter, new THREE.Vector3(4272.43, -2056.22, 1558.92));
+    fcenter.link(f1, new THREE.Vector3(-4458.25, -1214.17, 1897.02));
+    f1.link(fcenter, new THREE.Vector3(4488.05, -2162.52, 315.05));
+    fcenter.link(f2, new THREE.Vector3(-3684.06, -1064.94, -3197.82));
+    f2.link(fcenter, new THREE.Vector3(-2271.89, -569.86, -4405.52));
+    fcenter.link(f3, new THREE.Vector3(673.81, -1369.85, -4751.21));
+    f3.link(fcenter, new THREE.Vector3(293.76, -1155.07, -4848.87));
+    fcenter.link(f4, new THREE.Vector3(162.37, -683.65, 4941.59));
+    f4.link(fcenter, new THREE.Vector3(-4567.18, -498.56, -1957.10));
+    fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
+    f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
+
+    viewer.current.add(library1, library2, loftoranas1, loftoranas2, entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
+  }, [library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
   useEffect(() => {
     setTimeout(() => { 
