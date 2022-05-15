@@ -14,10 +14,9 @@ import pa from '../assets/floor-plans/loftas/floorlperformance.png';
 
 import PlanButtonContainer from './PlanButtonContainer';
 
-const NavTop = ({ category, setEntered, viewer, allDots }) => {
+const NavTop = ({ category, viewer, allDots }) => {
   // const [open, setOpen] = useState(false);
-  const [plan, setPlan] = useState(null);
-  
+  const [plan, setPlan] = useState('');
 
   // let floors = ['Entrance', 'Floor2', 'Loftas', 'Floor 4', 'Floor F'];
   // let floors = ['E', 'L', 'F4', 'FF'];
@@ -37,7 +36,7 @@ const NavTop = ({ category, setEntered, viewer, allDots }) => {
 
   return (
     <div id="nav-top">
-      <PlanButtonContainer category={category} setEntered={setEntered} allDots={allDots} viewer={viewer} floors={floors} plan={plan} setPlan={setPlan} />
+      <PlanButtonContainer category={category} allDots={allDots} viewer={viewer} floors={floors} plan={plan} setPlan={setPlan} />
     </div>
   );
 };
