@@ -1,10 +1,11 @@
-const NavLeft = ({name, setCategory}) => {
+const NavLeft = ({name, category, setCategory}) => {
     let handleClick = (e) => {
         e.preventDefault();
-        setCategory(name);
+        if(name === category) setCategory('');
+        else setCategory(name);
     }
     return (
-        <div className='btn' onClick={handleClick}>
+        <div className={name === category ? 'test btn' : 'btn'} onClick={handleClick}>
             <svg>
                 <rect x="0" y="0" fill="none" width="166" height="45" />
             </svg>

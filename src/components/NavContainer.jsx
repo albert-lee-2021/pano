@@ -9,7 +9,7 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
   return (
     <>
       {entered ? <NavTop category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
-      {entered ? <NavLeft setCategory={setCategory} /> : ''}
+      {entered ? <NavLeft category={category} setCategory={setCategory} /> : ''}
     </>
   );
 };
