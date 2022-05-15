@@ -1,6 +1,7 @@
 import './App.scss';
 import NavTop from './components/NavTop';
 import NavLeft from './components/NavLeft';
+import NavContainer from './components/NavContainer';
 import Banner from './components/Banner';
 
 import entrance2 from './assets/panos/entrance.jpg'
@@ -36,7 +37,6 @@ import * as THREE from 'three';
 import { useEffect, useMemo, useRef, useState } from "react";
 
 function App() {
-  const [category, setCategory] = useState('');
   const [entered, setEntered] = useState(false);
 
   let panoWithInfoSpots = (image, infospots=[]) => {
@@ -202,7 +202,6 @@ function App() {
     output: 'console'
   }));
 
-
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
     //origin.link(destination, ...)
@@ -295,8 +294,7 @@ function App() {
   return (
     <>
       {entered ? '' : <Banner entered={entered} setEntered={setEntered} />}
-      {entered ? <NavTop category={category} setCategory={setCategory} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
-      {entered ? <NavLeft category={category} setCategory={setCategory} /> : ''}
+      <NavContainer allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered}/>
     </>
   );
 }

@@ -2,7 +2,6 @@ const PlanButton = ({ x, y, category, active, setActive, name, plan, setPlan, fl
 
     let handleClick = e => {
         e.preventDefault();
-        console.log(active === name);
         setPlan(floors[name]);
         if(active === name) {
             setPlan('');

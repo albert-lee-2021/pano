@@ -7,7 +7,7 @@ const PlanImage = ({ category, plan, allDots, viewer }) => {
     const [dotMatch, setDotMatch] = useState('entrance');
 
     // make loftas floor plan wider by overriding default
-    if (plan && plan.includes('loftas'))
+    if (plan && plan.includes('loftas') || plan && plan.includes('floorl'))
         style = Object.assign({}, style, { height: '12rem', width: '41rem' })
     // make f and four floor plan heightened by overriding default
     else if (plan && plan.includes('media/f')) {
