@@ -1,12 +1,12 @@
-const Dot = ({ dots, setDots, viewer, allDots, dotMatch, i }) => {
+const Dot = ({ setDots, viewer, allDots, dotMatch, i }) => {
     let handleClick = (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         let newDot = {
-            i: {
-                ...dots[i], clicked: !dots[i].clicked
+            [i]: {
+                ...allDots[dotMatch][i], clicked: !allDots[dotMatch][i].clicked
             }
         }
-        setDots({...dots, ...newDot})
+        setDots({...allDots[dotMatch], ...newDot})
         viewer.current.setPanorama(allDots[dotMatch][i].destination);
     }
 

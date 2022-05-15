@@ -30,41 +30,25 @@ import loftoranas2d from './assets/panos/loftoranas2.jpg';
 import libraryd1 from './assets/panos/library1.jpg';
 import libraryd2 from './assets/panos/library2.jpg';
 
-// import  from './assets/panos/.jpg';
-
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { RGBA_ASTC_10x5_Format } from 'three';
 
 function App() {
+  const [category, setCategory] = useState('');
+  const [entered, setEntered] = useState(false);
 
-  let addCanvasWebGLContextLossEventListener = () => {
-    const canvases = document.getElementsByTagName("canvas");
-    if (canvases.length === 1) {
-      const canvas = canvases[0];
-      canvas.addEventListener('webglcontextlost', (event) => {
-        window.location.href = window.location.href;
-      });
-    }
-  }
-
-  let removeCanvasWebGLContextLossEventListener = () => {
-    const canvases = document.getElementsByTagName("canvas");
-    if (canvases.length === 1) {
-      const canvas = canvases[0];
-      canvas.removeEventListener('webglcontextlost');
-    }
-  }
-
-  let panoWithInfoSpots = (image, infospots) => {
+  let panoWithInfoSpots = (image, infospots=[]) => {
     let pano = new PANOLENS.ImagePanorama(image);
     for (let i = 0; i < infospots.length; i++) {
 
       //the 350 on the next line changes the infospot size
       let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-      infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
+
+      //if the infospot exists, set it's position to the coordinates originally given
+      if(infospots[i])
+        infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
 
       //the 50 on the next line represents vertical height from pano
       infospot.addHoverText(infospots[i].text, 50);
@@ -87,6 +71,7 @@ function App() {
       },
     ]
   ), []);
+  
   const stairs = useMemo(() => new PANOLENS.ImagePanorama(stairs2), []);
   const koridorius4 = useMemo(() => new PANOLENS.ImagePanorama(koridorius4ds), []);
   const outside2 = useMemo(() => new PANOLENS.ImagePanorama(outside), []);
@@ -206,25 +191,21 @@ function App() {
     ]
   })
 
-  const [entered, setEntered] = useState(false);
-
   const viewer = useRef(
     new PANOLENS.Viewer({
-      container: document.querySelector("#container"),
-      cameraFov: 80,
-      autoRotate: false,
-      autoRotateSpeed: .5,
-      autoRotateActivationDuration: 10000,
-      autoHideInfospot: false,
-      output: 'console'
-    })
-  );
+    container: document.querySelector("#container"),
+    cameraFov: 80,
+    autoRotate: false,
+    autoRotateSpeed: .5,
+    autoRotateActivationDuration: 10000,
+    autoHideInfospot: false,
+    output: 'console'
+  }));
 
-  
+
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
     //origin.link(destination, ...)
-    
     entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));
     entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57)); //out
     outside2.link(entrance, new THREE.Vector3(4955.37, 630.34, -19.82)); //in
@@ -292,17 +273,6 @@ function App() {
   }, [library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
   useEffect(() => {
-    setTimeout(() => { 
-      console.log('add contxt lost listener')
-      addCanvasWebGLContextLossEventListener();
-    }, 2500);
-    if(sessionStorage.getItem('opened')) setEntered(true);
-    return () => {
-      console.log('remove contxt lost listener')
-      removeCanvasWebGLContextLossEventListener()};
-    }, [])
-  
-  useEffect(() => {
     if (entered) {
       //show pano
       document.getElementById('container').className = '';
@@ -314,19 +284,19 @@ function App() {
       //cleanup duplicate styles
       Array.from(document.querySelectorAll('#panolens-style-addon')).slice(1, 100).forEach(el => el.remove());
 
-      // remove duplicate canvas
+      //cleanup unwanted container children
       let c = Array.from(document.querySelector('#container').children);
       for (let i = 3; i < c.length; i++) {
         if (!c[i].className.includes('infospot')) c[i].remove();
       }
-    } 
+    }
   }, [entered])
 
   return (
     <>
       {entered ? '' : <Banner entered={entered} setEntered={setEntered} />}
-      {entered ? <NavTop allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
-      {entered ? <NavLeft /> : ''}
+      {entered ? <NavTop category={category} setCategory={setCategory} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
+      {entered ? <NavLeft category={category} setCategory={setCategory} /> : ''}
     </>
   );
 }
