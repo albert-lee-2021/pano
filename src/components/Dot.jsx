@@ -1,4 +1,21 @@
-const Dot = ({ setDots, viewer, allDots, dotMatch, i }) => {
+const Dot = ({ left, top, setDots, viewer, allDots, dotMatch, i }) => {
+    let unfocused = {
+        left: left,
+        top: top,
+        display: 'block',
+        height: '1rem',
+        lineHeight: '1rem',
+        position: 'relative',
+        width: '1rem',
+        zIndex: 10,
+        border: '2px solid #444',
+        borderRadius: '50%',
+    }
+
+    let focused = {
+        border: '2px solid magenta',
+    }
+
     let handleClick = (e) => {
         e.preventDefault(); 
         let newDot = {
@@ -11,7 +28,7 @@ const Dot = ({ setDots, viewer, allDots, dotMatch, i }) => {
     }
 
     return (
-        <div className={(allDots[dotMatch][i].destination.src === viewer.current.panorama.src) ? 'button-focused' : 'button'} onClick={e => handleClick(e)}></div>
+        <div style={(allDots[dotMatch][i].destination.src === viewer.current.panorama.src) ? {...unfocused, ...focused} : unfocused} onClick={handleClick}></div>
     );
 };
 
