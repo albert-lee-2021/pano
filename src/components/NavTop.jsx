@@ -13,8 +13,7 @@ import pa from '../assets/floor-plans/loftas/floorlperformance.png';
 
 import PlanButtonContainer from './PlanButtonContainer';
 
-const NavTop = ({ category, viewer, allDots }) => {
-  const [plan, setPlan] = useState('');
+const NavTop = ({ plan, setPlan, category, viewer, allDots }) => {
   let floors = {
     'Entrance': entrance,
     'Loftas': loftas,
@@ -30,6 +29,15 @@ const NavTop = ({ category, viewer, allDots }) => {
   }
 
   useEffect(() => {
+    console.log('nav top use effect category dependent')
+    console.log('plan: ' + plan)
+    console.log('category: ' + category)
+
+    //if plan is loftas && category is toggled off remove highlights
+    if(!category && (plan.includes('loftas') || plan.includes('floorl'))) {
+      setPlan(floors['Loftas'])
+    };
+
     //if plan is loftas && category is graphic design
     if(plan.includes('loftas') && category.includes('Graphic Design')) setPlan(floors['Graphic Design']);
 

@@ -1,9 +1,18 @@
-const NavLeft = ({name, category, setCategory}) => {
+import { useEffect } from "react";
+
+const NavLeft = ({ plan, setPlan, name, category, setCategory }) => {
     let handleClick = (e) => {
         e.preventDefault();
         if(name === category) setCategory('');
         else setCategory(name);
     }
+
+    useEffect(() => {
+        setCategory(prevState => {
+            return category
+        });
+    }, [plan])
+
     return (
         <div className={name === category ? 'test btn' : 'btn'} onClick={handleClick}>
             <svg>
