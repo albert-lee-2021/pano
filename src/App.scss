@@ -111,15 +111,33 @@ button {
 
 .btn svg rect {
   stroke: #ffffff;
-  stroke-width: 6;
-  stroke-dasharray: 422, 0;
-  stroke-dashoffset: 0;
-  
-  // @include transition(all 900ms $ease-out-expo);
-}
-
-.test svg rect {
   stroke-width: 10;
   stroke-dasharray: 110, 312;
   stroke-dashoffset: 183;
+  animation: unfocused .2s linear;
+  animation-fill-mode: forwards;
+}
+
+.test svg rect {
+  stroke-width: 6;
+  stroke-dasharray: 422, 0;
+  stroke-dashoffset: 0;
+  animation: focused .2s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes focused {
+  to {
+    stroke-width: 10;
+    stroke-dasharray: 110, 312;
+    stroke-dashoffset: 183;
+  }
+}
+
+@keyframes unfocused {
+  to {
+    stroke-width: 6;
+    stroke-dasharray: 422, 0;
+    stroke-dashoffset: 0;
+  }
 }
