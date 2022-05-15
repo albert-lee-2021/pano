@@ -5,10 +5,17 @@ const NavLeft = ({setCategory}) => {
         e.preventDefault();
         setCategory(e.target.innerHTML);
     }
+
     return (
         <div id="nav-left">
-            <div style={{ margin: '1rem', fontSize: '1rem' }}>
-                {courses.map(name => <button onClick={handleClick} key={name}>{name}</button>)}
+            <div style={{ marginLeft: '1rem'}}>
+                {courses.map(name => 
+                <div className='btn' onClick={handleClick} key={name}>
+                    <svg>
+                        <rect x="0" y="0" fill="none" width="166" height="45" />
+                    </svg>
+                    {name}
+                </div>)}
             </div>
         </div>
     );
