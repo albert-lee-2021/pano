@@ -187,51 +187,52 @@ function App() {
     ],
     'loftas': [
       // dot 1 for loftas pano
-      { top: '10rem', left: '10rem', destination: tiltas2, clicked: false },
+      { top: '1.5rem', left: '8rem', destination: tiltas2, clicked: false },
       // dot 2 for loftas pano
-      { top: '10rem', left: '10rem', destination: loftas1, clicked: false },
+      { top: '1.3rem', left: '4rem', destination: loftas1, clicked: false },
       // dot 3 for loftas pano
-      { top: '10rem', left: '10rem', destination: loftas2, clicked: false },
+      { top: '-0.05rem', left: '1.2rem', destination: loftas2, clicked: false },
       // dot 4 for loftas pano
-      { top: '10rem', left: '10rem', destination: loftas3, clicked: false },
+      { top: '-1.35rem', left: '-2.7rem', destination: loftas3, clicked: false },
       // dot 5 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '0rem', left: '1.7rem', destination: loftoranas1, clicked: false },
       // dot 6 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-1.2rem', left: '-2.4rem', destination: loftoranas2, clicked: false },
       // dot 7 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-1.4rem', left: '-4.4rem', destination: library1, clicked: false },
       // dot 8 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-2.65rem', left: '-7.4rem', destination: library2, clicked: false },
       // dot 9 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-8rem', left: '-5.8rem', destination: lk1k, clicked: false },
       // dot 10 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-7.6rem', left: '-7rem', destination: lk1, clicked: false },
       // dot 11 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-10.6rem', left: '-9.6rem', destination: lk2k, clicked: false },
       // dot 12 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-10.1rem', left: '-9.6rem', destination: lk2, clicked: false },
       // dot 13 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-14.8rem', left: '-10rem', destination: l2, clicked: false },
       // dot 14 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-14rem', left: '-13.6rem', destination: lsk, clicked: false },
       // dot 15 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-10.5rem', left: '-13rem', destination: ls1, clicked: false },
       // dot 16 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-11.7rem', left: '-10rem', destination: ls2, clicked: false },
       // dot 17 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-18rem', left: '-16.5rem', destination: lt1k, clicked: false },
       // dot 18 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-17.9rem', left: '-15.4rem', destination: lt1, clicked: false },
       // dot 19 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-22.1rem', left: '-14rem', destination: l3, clicked: false },
       // dot 20 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-21.8rem', left: '-20.1rem', destination: lt2k, clicked: false },
       // dot 21 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-20.4rem', left: '-20.45rem', destination: ltk, clicked: false },
       // dot 22 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false },
+      { top: '-19.2rem', left: '-17.25rem', destination: lj, clicked: false },
       // dot 23 for loftas pano
-      { top: '10rem', left: '10rem', destination: 'placeholder', clicked: false }
+      { top: '-23.1rem', left: '-21.7rem', destination: ld, clicked: false }
+      // dot 24 for loftas pano
     ]
   })
 
@@ -293,15 +294,25 @@ function App() {
 
     loftas1.link(l1, new THREE.Vector3(4242.92, -647.23, -2550.70));
     loftas2.link(l1, new THREE.Vector3(-4756.24, -436.92, -1461.67)); 
+    l1.link(loftas2, new THREE.Vector3(-2275.70, -562.54, -4404.55));
     lk1k.link(lk1, new THREE.Vector3(3311.52, -1361.67, 3477.30)); 
+    lk1.link(lk1k, new THREE.Vector3(3516.03, -814.01, 3449.47)); 
     lk2k.link(lk2, new THREE.Vector3(-3356.43, -1177.64, 3505.69));
     lk2k.link(l2, new THREE.Vector3(3426.89, -1280.19, -3394.38));
+    lk2.link(lk2k, new THREE.Vector3(-3174.40, -818.70, 3765.96));
+    l2.link(lk2k, new THREE.Vector3(-4814.39, -926.77, -945.00));
     lsk.link(ls1, new THREE.Vector3(-36.98, -351.72, 4984.24)); 
     lsk.link(l3, new THREE.Vector3(4794.12, -388.38, -1341.27)); 
+    ls1.link(lsk, new THREE.Vector3(2785.62, -457.67, -4117.08)); 
+    ls1.link(ls2, new THREE.Vector3(-2342.27, -551.74, -4372.07)); 
+    ls2.link(ls1, new THREE.Vector3(3839.85, -573.80, -3133.82)); 
     lt1k.link(l3, new THREE.Vector3(-4644.00, -437.45, -1777.14)); 
     lt1k.link(lt1, new THREE.Vector3(307.56, -1621.37, 4711.02)); 
+    l3.link(lt1k, new THREE.Vector3(2333.98, -459.01, -4388.59)); 
     lt2k.link(lt1, new THREE.Vector3(-532.82, -1147.11, 4835.36)); 
+    lt1.link(lt1k, new THREE.Vector3(-4869.84, -1056.77, -266.71)); 
     lt2k.link(l5, new THREE.Vector3(-4592.16, -789.53, 1794.41)); 
+    l5.link(lt2k, new THREE.Vector3(-4006.18, -851.99, 2860.51)); 
     ltk.link(lj, new THREE.Vector3(4238.11, -1194.30, 2359.91));
     lj.link(ltk, new THREE.Vector3(-4916.68, -534.56, -669.88));
     ltk.link(ld, new THREE.Vector3(3673.69, -1405.72, -3071.60));
@@ -350,7 +361,7 @@ function App() {
     fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
     f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
 
-    viewer.current.add(l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, lt1, library1, library2, loftoranas1, loftoranas2, entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
+    viewer.current.add(lsk, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2, entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
   }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
   useEffect(() => {
