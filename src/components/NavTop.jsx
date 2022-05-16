@@ -4,8 +4,12 @@ import PlanButtonContainer from './PlanButtonContainer';
 const NavTop = ({ plan, setPlan, category, viewer, allDots, floors }) => {
   
   useEffect(() => {
+    if(plan.includes('entrance')) {
+      setPlan(floors['Entrance'])
+    }
+    
     //if plan is loftas && category is toggled off remove highlights
-    if(!category && plan.includes('floorl')) {
+    else if(!category && plan.includes('floorl')) {
       setPlan(floors['Loftas'])
     }
 
