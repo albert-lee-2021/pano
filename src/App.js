@@ -1,6 +1,4 @@
 import './App.scss';
-import NavTop from './components/NavTop';
-import NavLeft from './components/NavLeft';
 import NavContainer from './components/NavContainer';
 import Banner from './components/Banner';
 
