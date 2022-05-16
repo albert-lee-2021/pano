@@ -30,6 +30,30 @@ import loftoranas1d from './assets/panos/loftoranas1.jpg';
 import loftoranas2d from './assets/panos/loftoranas2.jpg';
 import libraryd1 from './assets/panos/library1.jpg';
 import libraryd2 from './assets/panos/library2.jpg';
+import lk1ks from './assets/panos/lk1k.jpg';
+import lk2ks from './assets/panos/lk2k.jpg';
+import lsks from './assets/panos/lsk.jpg';
+import lt1ks from './assets/panos/lt1k.jpg';
+import lt2ks from './assets/panos/lt2k.jpg';
+import ltks from './assets/panos/ltk.jpg';
+import l10ks from './assets/panos/l10k.jpg';
+
+import l1s from './assets/panos/l1.jpg';
+import l2s from './assets/panos/l2.jpg';
+import l3s from './assets/panos/l3.jpg';
+import l5s from './assets/panos/l5.jpg';
+import l7s from './assets/panos/l7.jpg';
+import l9s from './assets/panos/l9.jpg';
+import l10s from './assets/panos/l10.jpg';
+import lds from './assets/panos/ld.jpg';
+import ljs from './assets/panos/lj.jpg';
+import lk1s from './assets/panos/lk1.jpg';
+import lk2s from './assets/panos/lk2.jpg';
+import ls1s from './assets/panos/ls1.jpg';
+import ls2s from './assets/panos/ls2.jpg';
+import lt1s from './assets/panos/lt1.jpg';
+
+// import  from './assets/panos/.jpg';
 
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
@@ -97,7 +121,29 @@ function App() {
   const loftoranas2 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas2d), []);
   const library1 = useMemo(() => new PANOLENS.ImagePanorama(libraryd1), []);
   const library2 = useMemo(() => new PANOLENS.ImagePanorama(libraryd2), []);
-
+  const lk1k = useMemo(() => new PANOLENS.ImagePanorama(lk1ks), []);
+  const lk2k = useMemo(() => new PANOLENS.ImagePanorama(lk2ks), []);
+  const lsk = useMemo(() => new PANOLENS.ImagePanorama(lsks), []);
+  const lt1k = useMemo(() => new PANOLENS.ImagePanorama(lt1ks), []);
+  const lt2k = useMemo(() => new PANOLENS.ImagePanorama(lt2ks), []);
+  const ltk = useMemo(() => new PANOLENS.ImagePanorama(ltks), []);
+  const l10k = useMemo(() => new PANOLENS.ImagePanorama(l10ks), []);
+// \/auditoriums
+  const l1 = useMemo(() => new PANOLENS.ImagePanorama(l1s), []);
+  const l2 = useMemo(() => new PANOLENS.ImagePanorama(l2s), []);
+  const l3 = useMemo(() => new PANOLENS.ImagePanorama(l3s), []);
+  const l5 = useMemo(() => new PANOLENS.ImagePanorama(l5s), []);
+  const l7 = useMemo(() => new PANOLENS.ImagePanorama(l7s), []);
+  const l9 = useMemo(() => new PANOLENS.ImagePanorama(l9s), []);
+  const l10 = useMemo(() => new PANOLENS.ImagePanorama(l10s), []);
+  const lk1 = useMemo(() => new PANOLENS.ImagePanorama(lk1s), []);
+  const lk2 = useMemo(() => new PANOLENS.ImagePanorama(lk2s), []);
+  const ls1 = useMemo(() => new PANOLENS.ImagePanorama(ls1s), []);
+  const ls2 = useMemo(() => new PANOLENS.ImagePanorama(ls2s), []);
+  const lj = useMemo(() => new PANOLENS.ImagePanorama(ljs), []);
+  const ld = useMemo(() => new PANOLENS.ImagePanorama(lds), []);
+  const lt1 = useMemo(() => new PANOLENS.ImagePanorama(lt1s), []);
+  
   // const  = useMemo(() => new PANOLENS.ImagePanorama(), []);
 
   const [allDots] = useState({
@@ -217,9 +263,9 @@ function App() {
     
     //floorL
     loftas1.link(loftas2, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 1>2
-    loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); //loftas 2>1
+    loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); 
     loftas2.link(loftas3, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 2>3
-    loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); //loftas 3>2
+    loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); 
     loftas3.link(loftoranas2, new THREE.Vector3(-1200.96, -1406.38, 4634.93));
     loftas2.link(loftoranas1, new THREE.Vector3(-231.37, -1376.61, 4790.67)); 
     loftas2.link(loftoranas2, new THREE.Vector3(4038.42, -1245.60, 2655.35)); 
@@ -228,12 +274,50 @@ function App() {
     loftoranas2.link(loftas2, new THREE.Vector3(3551.28, -858.46, -3401.73)); 
     loftoranas2.link(loftas3, new THREE.Vector3(4792.60, -1368.03, -240.68)); 
     loftoranas2.link(loftoranas1, new THREE.Vector3(-81.60, -1242.02, -4836.48)); 
-    loftoranas2.link(library1, new THREE.Vector3(-2932.67, -1154.00, 3876.01)); //
-    library1.link(loftoranas2, new THREE.Vector3(-941.27, -652.66, 4859.56)); //
-    library1.link(library2, new THREE.Vector3(-1763.61, -1224.34, -4506.39)); //
-    library2.link(library1, new THREE.Vector3(154.43, -1267.75, -4825.41)); //
+    loftoranas2.link(library1, new THREE.Vector3(-2932.67, -1154.00, 3876.01)); 
+    library1.link(loftoranas2, new THREE.Vector3(-941.27, -652.66, 4859.56)); 
+    library1.link(library2, new THREE.Vector3(-1763.61, -1224.34, -4506.39)); 
+    library2.link(library1, new THREE.Vector3(154.43, -1267.75, -4825.41)); 
+    loftas3.link(lk1k, new THREE.Vector3(4902.25, -876.56, -332.34)); 
+    lk1k.link(lk2k, new THREE.Vector3(4871.19, -1113.92, 24.12)); 
+    lk1k.link(loftas3, new THREE.Vector3(-4922.33, -835.01, 106.94)); 
+    lk2k.link(lsk, new THREE.Vector3(4907.60, -930.07, 27.23)); 
+    lk2k.link(lk1k, new THREE.Vector3(-4834.63, -1224.92, 208.88)); 
+    lsk.link(lt1k, new THREE.Vector3(4866.63, -1119.28, -90.74)); 
+    lsk.link(lk2k, new THREE.Vector3(-4914.22, -901.67, -8.58)); 
+    lt1k.link(lt2k, new THREE.Vector3(4899.21, -968.01, 43.29)); 
+    lt1k.link(lsk, new THREE.Vector3(-4844.84, -1201.91, 137.94)); 
+    lt2k.link(ltk, new THREE.Vector3(3128.57, -872.04, 3789.44)); 
+    lt2k.link(lt1k, new THREE.Vector3(-3708.28, -1018.41, 3182.59));
+    ltk.link(lt2k, new THREE.Vector3(-4860.91, -1118.93, -201.22));
+    l10k.link(lt2k, new THREE.Vector3(4945.12, -708.68, -38.52));
+    lt2k.link(l10k, new THREE.Vector3(3744.60, -1097.39, -3112.81)); 
 
-    //     .link(, new THREE.Vector3()); //
+    loftas1.link(l1, new THREE.Vector3(4242.92, -647.23, -2550.70));
+    loftas2.link(l1, new THREE.Vector3(-4756.24, -436.92, -1461.67)); 
+    lk1k.link(lk1, new THREE.Vector3(3311.52, -1361.67, 3477.30)); 
+    lk2k.link(lk2, new THREE.Vector3(-3356.43, -1177.64, 3505.69));
+    lk2k.link(l2, new THREE.Vector3(3426.89, -1280.19, -3394.38));
+    lsk.link(ls1, new THREE.Vector3(-36.98, -351.72, 4984.24)); 
+    lsk.link(l3, new THREE.Vector3(4794.12, -388.38, -1341.27)); 
+    lt1k.link(l3, new THREE.Vector3(-4644.00, -437.45, -1777.14)); 
+    lt1k.link(lt1, new THREE.Vector3(307.56, -1621.37, 4711.02)); 
+    lt2k.link(lt1, new THREE.Vector3(-532.82, -1147.11, 4835.36)); 
+    lt2k.link(l5, new THREE.Vector3(-4592.16, -789.53, 1794.41)); 
+    ltk.link(lj, new THREE.Vector3(4238.11, -1194.30, 2359.91));
+    lj.link(ltk, new THREE.Vector3(-4916.68, -534.56, -669.88));
+    ltk.link(ld, new THREE.Vector3(3673.69, -1405.72, -3071.60));
+    ld.link(ltk, new THREE.Vector3(-609.17, -411.75, -4940.99));
+    ltk.link('l8', new THREE.Vector3(4880.74, -801.81, -684.75));
+    l10k.link(l9, new THREE.Vector3(4665.40, -550.99, -1683.94));
+    l9.link(l10k, new THREE.Vector3(-4521.77, -422.68, 2082.06));
+    l10k.link(l10, new THREE.Vector3(-1350.30, -1364.44, -4607.15));
+    l10.link(l10k, new THREE.Vector3(4411.27, -318.46, -2313.22));
+    l10k.link(l7, new THREE.Vector3(4235.78, -1165.03, 2382.23));
+    l7.link(l10k, new THREE.Vector3(-4801.88, -1023.34, -901.36));
+
+    //     .link(, new THREE.Vector3()); 
+
     //floor 4
     fourfloorstairs.link(koridorius4, new THREE.Vector3(-3943.38, -312.74, 3045.03));
     fourfloorstairs.link(fourdotfour, new THREE.Vector3(218.49, -1669.38, -4697.98));
@@ -268,8 +352,8 @@ function App() {
     fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
     f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
 
-    viewer.current.add(library1, library2, loftoranas1, loftoranas2, entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
-  }, [library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
+    viewer.current.add(l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, lt1, library1, library2, loftoranas1, loftoranas2, entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
+  }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
   useEffect(() => {
     if (entered) {
