@@ -149,9 +149,9 @@ function App() {
       // dot 1 for entrance pano
       { top: '3rem', left: '-19rem', destination: entrance, clicked: false },
       // dot 2 for entrance pano
-      { top: '-3px', left: '-28rem', destination: stairs, clicked: false },
+      { top: '-10.2px', left: '-28.1rem', destination: stairs, clicked: false },
       // dot 3 for entrance pano
-      { top: '8px', left: '-14rem', destination: outside2, clicked: false }
+      { top: '8px', left: '-14rem', destination: outside2, clicked: false } 
     ],
     'f': [
       // dot 1 for f pano
@@ -377,7 +377,7 @@ function App() {
     fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
     f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
 
-    viewer.current.add(lsk, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2, entrance, stairs, koridorius4, outside2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
+    viewer.current.add(outside2, entrance, lsk, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2,  stairs, koridorius4, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
   }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
   useEffect(() => {
