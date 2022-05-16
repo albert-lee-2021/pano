@@ -155,34 +155,37 @@ function App() {
     ],
     'f': [
       // dot 1 for f pano
-      { top: '10rem', left: '10rem', destination: fentrance, clicked: false },
+      {  left: '-28.1rem', top: '5.3rem', destination: fentrance, clicked: false },
       // dot 2 for f pano
-      { top: '10rem', left: '10rem', destination: fcenter, clicked: false },
+      {  left: '-23.3rem', top: '4.1rem', destination: fcenter, clicked: false },
       // dot 3 for f pano
-      { top: '10rem', left: '10rem', destination: f1, clicked: false },
+      {  left: '-20.7rem', top: '3rem', destination: f1, clicked: false },
       // dot 4 for f pano
-      { top: '10rem', left: '10rem', destination: f2, clicked: false },
+      {  left: '-22.2rem', top: '-1.3rem', destination: f2, clicked: false },
       // dot 5 for f pano
-      { top: '10rem', left: '10rem', destination: f3, clicked: false },
+      {  left: '-25.45rem', top: '-1.4rem', destination: f3, clicked: false },
       // dot 6 for f pano
-      { top: '10rem', left: '10rem', destination: f4, clicked: false },
+      {  left: '-20.5rem', top: '3.8rem', destination: f4, clicked: false },
       // dot 7 for f pano
-      { top: '10rem', left: '10rem', destination: f5, clicked: false }
+      {  left: '-25.3rem', top: '1.7rem', destination: f5, clicked: false }
     ],
     'four': [
       // dot 1 for four pano
-      { top: '10rem', left: '10rem', destination: fourfloorstairs, clicked: false },
+      { top: '10.9rem', left: '-25rem', destination: fourfloorstairs, clicked: false },
       // dot 2 for four pano
-      { top: '10rem', left: '10rem', destination: koridorius4, clicked: false },
+      { top: '9.6rem', left: '-23.7rem', destination: koridorius4, clicked: false },
       // dot 3 for four pano
-      { top: '10rem', left: '10rem', destination: koridorius4d2, clicked: false },
+      { top: '0.5em', left: '-23.6rem', destination: koridorius4d2, clicked: false },
       // dot 4 for four pano
-      { top: '10rem', left: '10rem', destination: fourdotone, clicked: false },
+      { top: '-1.9rem', left: '-26.5rem', destination: fourdotone, clicked: false },
       // dot 5 for four pano
-      { top: '10rem', left: '10rem', destination: fourdottwo, clicked: false },
+      { top: '-5.1rem', left: '-22.5rem', destination: fourdottwo, clicked: false },
       // dot 6 for four pano
-      { top: '10rem', left: '10rem', destination: fourdotthree, clicked: false }
-
+      { top: '-2.2rem', left: '-20.9rem', destination: fourdotthree, clicked: false },
+      // dot 7
+      { top: '2.6rem', left: '-20.9rem', destination: fourdotfive, clicked: false },
+      // dot 8
+      { top: '-0.6rem', left: '-26.7rem', destination: fourdotfour, clicked: false }
 
     ],
     'loftas': [
@@ -231,8 +234,21 @@ function App() {
       // dot 22 for loftas pano
       { top: '-19.2rem', left: '-17.25rem', destination: lj, clicked: false },
       // dot 23 for loftas pano
-      { top: '-23.1rem', left: '-21.7rem', destination: ld, clicked: false }
+      { top: '-23.1rem', left: '-21.7rem', destination: ld, clicked: false },
       // dot 24 for loftas pano
+      { top: '-23.9rem', left: '-26.9rem', destination: l10, clicked: false },
+      // dot 25
+      { top: '-25.1rem', left: '-24.2rem', destination: l9, clicked: false },
+      // dot 26
+      { top: '-31rem', left: '-23.9rem', destination: l7, clicked: false },
+      // dot 27
+      { top: '-30.65rem', left: '-25.5rem', destination: l10k, clicked: false },
+      // dot 28
+      { top: '-33.5rem', left: '-19.1rem', destination: l5, clicked: false },
+      // dot 29
+      { top: '-27.4rem', left: '-21.7rem', destination: 'l8', clicked: false },
+      // dot 30
+      { top: '-35.8rem', left: '3.2rem', destination: l1, clicked: false },
     ]
   })
 
