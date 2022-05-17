@@ -384,8 +384,10 @@ function App() {
   useEffect(() => {
     if (entered) {
       //show pano
+      sessionStorage.entered = true;
       document.getElementById('container').className = '';
     } else if (!entered) {
+      if(sessionStorage.entered) setEntered(true);
       //hide pano
       document.getElementById('container').className = 'display-none';
     }
