@@ -268,26 +268,26 @@ function App() {
     //origin.link(destination, ...)
     entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));
     entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57)); //out
-    outside2.link(entrance, new THREE.Vector3(4955.37, 630.34, -19.82)); //in
+    outside2.link(entrance, new THREE.Vector3(4980.96, 417.63, 12.00)); //in
     stairs.link(entrance, new THREE.Vector3(3725.45, -3094.47, 1225.24)); //down
     stairs.link(tiltas2, new THREE.Vector3(4954.39, 531.99, -260.74)); //up
     tiltas2.link(stairs, new THREE.Vector3(-4873.73, -756.40, -773.44)); //down
     tiltas2.link(fourfloorstairs, new THREE.Vector3(-4941.29, -748.93, -20.76)); //up
-    tiltas2.link(loftas1, new THREE.Vector3(4734.32, -1531.18, -474.88)); //tiltas > loftas 
-    loftas1.link(tiltas2, new THREE.Vector3(-4171.12, -1991.75, -1895.44)); //loftas > tiltas
+    tiltas2.link(loftas1, new THREE.Vector3(4870.73, -1010.71, -424.59)); //tiltas > loftas 
+    loftas1.link(tiltas2, new THREE.Vector3(-4593.61, -1002.42, -1672.63)); //loftas > tiltas
     
     //floorL
     loftas1.link(loftas2, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 1>2
     loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); 
     loftas2.link(loftas3, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 2>3
     loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); 
-    loftas3.link(loftoranas2, new THREE.Vector3(-1200.96, -1406.38, 4634.93));
+    loftas3.link(loftoranas2, new THREE.Vector3(-398.44, -1315.36, 4799.19));
     loftas2.link(loftoranas1, new THREE.Vector3(-231.37, -1376.61, 4790.67)); 
     loftas2.link(loftoranas2, new THREE.Vector3(4038.42, -1245.60, 2655.35)); 
-    loftoranas1.link(loftas2, new THREE.Vector3(-231.37, -1376.61, 4790.67)); 
+    loftoranas1.link(loftas2, new THREE.Vector3(-1227.47, -1351.08, 4643.95)); 
     loftoranas1.link(loftoranas2, new THREE.Vector3(-4699.17, -1266.09, -1113.90)); 
     loftoranas2.link(loftas2, new THREE.Vector3(3551.28, -858.46, -3401.73)); 
-    loftoranas2.link(loftas3, new THREE.Vector3(4792.60, -1368.03, -240.68)); 
+    loftoranas2.link(loftas3, new THREE.Vector3(4756.95, -1299.83, 763.61)); 
     loftoranas2.link(loftoranas1, new THREE.Vector3(-81.60, -1242.02, -4836.48)); 
     loftoranas2.link(library1, new THREE.Vector3(-2932.67, -1154.00, 3876.01)); 
     library1.link(loftoranas2, new THREE.Vector3(-941.27, -652.66, 4859.56)); 
@@ -310,12 +310,12 @@ function App() {
 
     loftas1.link(l1, new THREE.Vector3(4242.92, -647.23, -2550.70));
     loftas2.link(l1, new THREE.Vector3(-4756.24, -436.92, -1461.67)); 
-    l1.link(loftas2, new THREE.Vector3(-2275.70, -562.54, -4404.55));
+    l1.link(loftas2, new THREE.Vector3(-2149.23, -605.32, -4432.29));
     lk1k.link(lk1, new THREE.Vector3(3311.52, -1361.67, 3477.30)); 
     lk1.link(lk1k, new THREE.Vector3(3516.03, -814.01, 3449.47)); 
     lk2k.link(lk2, new THREE.Vector3(-3356.43, -1177.64, 3505.69));
     lk2k.link(l2, new THREE.Vector3(3426.89, -1280.19, -3394.38));
-    lk2.link(lk2k, new THREE.Vector3(-3174.40, -818.70, 3765.96));
+    lk2.link(lk2k, new THREE.Vector3(-3005.80, -1710.97, 3597.83));
     l2.link(lk2k, new THREE.Vector3(-4814.39, -926.77, -945.00));
     lsk.link(ls1, new THREE.Vector3(-36.98, -351.72, 4984.24)); 
     lsk.link(l3, new THREE.Vector3(4794.12, -388.38, -1341.27)); 
@@ -344,7 +344,7 @@ function App() {
     //     .link(, new THREE.Vector3()); 
 
     //floor 4
-    fourfloorstairs.link(koridorius4, new THREE.Vector3(-3943.38, -312.74, 3045.03));
+    fourfloorstairs.link(koridorius4, new THREE.Vector3(-2849.17, -3480.70, 2172.33));
     fourfloorstairs.link(fourdotfour, new THREE.Vector3(218.49, -1669.38, -4697.98));
     fourfloorstairs.link(tiltas2, new THREE.Vector3(2943.27, -3890.67, 1067.96));
     koridorius4.link(fourfloorstairs, new THREE.Vector3(4204.75, -866.53, -2549.42));
@@ -367,13 +367,14 @@ function App() {
     fentrance.link(outside2, new THREE.Vector3(-4415.62, 1558.35, -1734.37)); // to college entrance
     fentrance.link(fcenter, new THREE.Vector3(4272.43, -2056.22, 1558.92));
     fcenter.link(f1, new THREE.Vector3(-4458.25, -1214.17, 1897.02));
-    f1.link(fcenter, new THREE.Vector3(4488.05, -2162.52, 315.05));
-    fcenter.link(f2, new THREE.Vector3(-3684.06, -1064.94, -3197.82));
-    f2.link(fcenter, new THREE.Vector3(-2271.89, -569.86, -4405.52));
+    fcenter.link(fentrance, new THREE.Vector3(4868.78, 115.29, -1104.05));
+    f1.link(fcenter, new THREE.Vector3(4752.92, -1482.75, 380.56));
+    fcenter.link(f2, new THREE.Vector3(-3739.14, -909.05, -3179.00));
+    f2.link(fcenter, new THREE.Vector3(-2029.04, -1158.68, -4417.16));
     fcenter.link(f3, new THREE.Vector3(673.81, -1369.85, -4751.21));
     f3.link(fcenter, new THREE.Vector3(293.76, -1155.07, -4848.87));
     fcenter.link(f4, new THREE.Vector3(162.37, -683.65, 4941.59));
-    f4.link(fcenter, new THREE.Vector3(-4567.18, -498.56, -1957.10));
+    f4.link(fcenter, new THREE.Vector3(-4513.10, -852.68, -1965.36));
     fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
     f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
 
