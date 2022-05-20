@@ -15,7 +15,7 @@ const PlanButtonContainer = ({ category, viewer, allDots, floors, plan, setPlan}
             {plan ?
                 <PlanImage category={category} viewer={viewer} allDots={allDots} plan={plan} setPlan={setPlan}/> : ''
             }
-            {/* <button>Search</button> */}
+            <div className="btn" onClick={() => {window.location = window.location}}>Reset</div>
         </div>
     );
 };
