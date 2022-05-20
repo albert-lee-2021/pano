@@ -50,6 +50,7 @@ import lk2s from './assets/panos/lk2.jpg';
 import ls1s from './assets/panos/ls1.jpg';
 import ls2s from './assets/panos/ls2.jpg';
 import lt1s from './assets/panos/lt1.jpg';
+import l8s from './assets/panos/l8.jpg';
 
 // import  from './assets/panos/.jpg';
 
@@ -141,7 +142,8 @@ function App() {
   const lj = useMemo(() => new PANOLENS.ImagePanorama(ljs), []);
   const ld = useMemo(() => new PANOLENS.ImagePanorama(lds), []);
   const lt1 = useMemo(() => new PANOLENS.ImagePanorama(lt1s), []);
-  
+  const l8 = useMemo(() => new PANOLENS.ImagePanorama(l8s), []);
+
   // const  = useMemo(() => new PANOLENS.ImagePanorama(), []);
 
   const [allDots] = useState({
@@ -246,7 +248,7 @@ function App() {
       // dot 28
       { top: '-33.5rem', left: '-19.1rem', destination: l5, clicked: false },
       // dot 29
-      { top: '-27.4rem', left: '-21.7rem', destination: 'l8', clicked: false },
+      { top: '-27.4rem', left: '-21.7rem', destination: l8, clicked: false },
       // dot 30
       { top: '-35.8rem', left: '3.2rem', destination: l1, clicked: false },
     ]
@@ -333,13 +335,14 @@ function App() {
     lj.link(ltk, new THREE.Vector3(-4916.68, -534.56, -669.88));
     ltk.link(ld, new THREE.Vector3(3673.69, -1405.72, -3071.60));
     ld.link(ltk, new THREE.Vector3(-609.17, -411.75, -4940.99));
-    ltk.link('l8', new THREE.Vector3(4880.74, -801.81, -684.75));
+    ltk.link(l8, new THREE.Vector3(4880.74, -801.81, -684.75));
     l10k.link(l9, new THREE.Vector3(4665.40, -550.99, -1683.94));
     l9.link(l10k, new THREE.Vector3(-4521.77, -422.68, 2082.06));
     l10k.link(l10, new THREE.Vector3(-1350.30, -1364.44, -4607.15));
     l10.link(l10k, new THREE.Vector3(4411.27, -318.46, -2313.22));
     l10k.link(l7, new THREE.Vector3(4235.78, -1165.03, 2382.23));
     l7.link(l10k, new THREE.Vector3(-4801.88, -1023.34, -901.36));
+    l8.link(ltk, new THREE.Vector3(4433.86, -790.32, -2157.44));
 
     //     .link(, new THREE.Vector3()); 
 
@@ -378,8 +381,8 @@ function App() {
     fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
     f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
 
-    viewer.current.add(outside2, entrance, lsk, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2,  stairs, koridorius4, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
-  }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
+    viewer.current.add(outside2, entrance, lsk, l8, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2,  stairs, koridorius4, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
+  }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l8, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
   useEffect(() => {
     if (entered) {
