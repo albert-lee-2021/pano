@@ -40,9 +40,6 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
       'Fashion Design': fd,
       'Applied Photography': ap,
       'Performance Acting': pa
-
-      //floor four categories
-
     }
   );
 
@@ -68,8 +65,8 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
 
   return (
     <>
-      {entered ? <NavTop floors={floors} plan={plan} setPlan={setPlan} category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
-      {entered ? <NavLeft floors={floors} plan={plan} setPlan={setPlan} category={category} setCategory={setCategory} /> : ''}
+      {entered ? <NavTop currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} plan={plan} setPlan={setPlan} category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
+      {entered ? <NavLeft currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} plan={plan} setPlan={setPlan} category={category} setCategory={setCategory} /> : ''}
     </>
   );
 };
