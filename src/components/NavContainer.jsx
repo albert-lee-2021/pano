@@ -41,7 +41,27 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
       'Performance Acting': pa
 
       //floor four categories
-      
+
+    }
+  );
+
+  const [categories] = useState(
+    {
+      'Entrance': {},
+      'Loftas': {
+        'Graphic Design': gd,
+        'Interior Design': id,
+        'Fashion Design': fd,
+        'Applied Photography': ap,
+        'Performance Acting': pa
+      }, 
+      'Floor 4': {
+        'Graphic Design': gd,
+        'Fashion Design': fd
+      }, 
+      'Floor F': {
+        'Applied Photography': ap
+      }, 
     }
   );
 
