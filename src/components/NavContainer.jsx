@@ -4,15 +4,23 @@ import NavTop from "./NavTop";
 import NavLeft from "./NavLeft";
 
 import entrance from '../assets/floor-plans/entrance.png';
-import four from '../assets/floor-plans/4/four.png';
-import f from '../assets/floor-plans/f/f.png';
 
+//loftas
 import loftas from '../assets/floor-plans/loftas/loftas.png';
 import gd from '../assets/floor-plans/loftas/floorlgkd.png';
 import id from '../assets/floor-plans/loftas/floorlinterior.png';
 import fd from '../assets/floor-plans/loftas/floorlfashion.png';
 import ap from '../assets/floor-plans/loftas/floorlphotography.png';
 import pa from '../assets/floor-plans/loftas/floorlperformance.png';
+
+//floor 4
+import four from '../assets/floor-plans/4/four.png';
+import fourgd from '../assets/floor-plans/4/floor4gkd.png'
+import fourfashion from '../assets/floor-plans/4/floor4fashion.png'
+
+//floor f
+import f from '../assets/floor-plans/f/f.png';
+import fphoto from '../assets/floor-plans/f/floorfphoto.png';
 
 const NavContainer = ({allDots, viewer, entered, setEntered}) => {
   const [category, setCategory] = useState('');
@@ -33,7 +41,7 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
       'Performance Acting': pa
 
       //floor four categories
-
+      
     }
   );
 
