@@ -25,6 +25,7 @@ import fphoto from '../assets/floor-plans/f/floorfphoto.png';
 const NavContainer = ({allDots, viewer, entered, setEntered}) => {
   const [category, setCategory] = useState('');
   const [plan, setPlan] = useState('');
+  const [currentFloor, setCurrentFloor] = useState('Entrance');
   const [floors] = useState(
     {
       //do not change the below 4 lines or reorder them
