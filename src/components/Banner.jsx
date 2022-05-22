@@ -8,7 +8,7 @@ const Banner = ({entered, setEntered}) => {
                 sessionStorage.setItem('opened', true);
                 setEntered(!entered)
             }}>Enter site</button>
-            <video width="750" height="500" autoplay="true" muted="true" playsinline >
+            <video width="1879" height="1008" autoplay="true" muted="true" playsinline >
                 <source src={video} type="video/mp4"/>
             </video>
         </div>
