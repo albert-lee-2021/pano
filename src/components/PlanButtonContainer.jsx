@@ -1,21 +1,18 @@
-import { useState } from "react";
 import PlanButton from "./PlanButton";
 import PlanImage from './PlanImage';
 
-const PlanButtonContainer = ({ category, viewer, allDots, floors, plan, setPlan}) => {
-    const [active, setActive] = useState('');
-
+const PlanButtonContainer = ({ planImages, currentFloor, setCurrentFloor, category, viewer, allDots, floors, planImage, setPlanImage}) => {
     return (
         <div style={{ margin: '1rem 13rem', display: 'flex', alignItems: 'center', justifyContent: 'start', width: '100vw' }}>
             {Object.keys(floors).slice(0, 4).map((name, i) =>
-                <PlanButton category={category} active={active} setActive={setActive} floors={floors} plan={plan} setPlan={setPlan} name={name} key={name + i}>
+                <PlanButton planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} category={category} floors={floors} planImage={planImage} setPlanImage={setPlanImage} name={name} key={name + i}>
                     {name}
                 </PlanButton>
             )}
-            {plan ?
-                <PlanImage category={category} viewer={viewer} allDots={allDots} plan={plan} setPlan={setPlan}/> : ''
+            {planImage ?
+                <PlanImage category={category} viewer={viewer} allDots={allDots} planImage={planImage} setPlanImage={setPlanImage}/> : ''
             }
-            <div className="btn" onClick={() => {window.location = window.location}}>Reset</div>
+            <div className="btn" onClick={() => {window.location = window.location.href}}>Reset</div>
         </div>
     );
 };
