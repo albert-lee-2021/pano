@@ -24,8 +24,8 @@ import fphoto from '../assets/floor-plans/f/floorfphoto.png';
 
 const NavContainer = ({allDots, viewer, entered, setEntered}) => {
   const [category, setCategory] = useState('');
-  const [plan, setPlan] = useState('');
-  const [currentFloor, setCurrentFloor] = useState('Entrance');
+  const [planImage, setPlanImage] = useState('');
+  const [currentFloor, setCurrentFloor] = useState('');
   const [floors] = useState(
     {
       //do not change the below 4 lines or reorder them
@@ -43,7 +43,7 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
     }
   );
 
-  const [categories] = useState(
+  const [planImages] = useState(
     {
       'Entrance': {},
       'Loftas': {
@@ -54,19 +54,19 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
         'Performance Acting': pa
       }, 
       'Floor 4': {
-        'Graphic Design': gd,
-        'Fashion Design': fd
+        'Graphic Design': fourgd,
+        'Fashion Design': fourfashion
       }, 
       'Floor F': {
-        'Applied Photography': ap
+        'Applied Photography': fphoto
       }, 
     }
   );
 
   return (
     <>
-      {entered ? <NavTop currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} plan={plan} setPlan={setPlan} category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
-      {entered ? <NavLeft currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} plan={plan} setPlan={setPlan} category={category} setCategory={setCategory} /> : ''}
+      {entered ? <NavTop planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} planImage={planImage} setPlanImage={setPlanImage} category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
+      {entered ? <NavLeft planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} planImage={planImage} setPlanImage={setPlanImage} category={category} setCategory={setCategory} /> : ''}
     </>
   );
 };

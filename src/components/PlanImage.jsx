@@ -1,35 +1,35 @@
 import DotContainer from "./DotContainer"
 import { useEffect, useState } from 'react';
 
-const PlanImage = ({ category, plan, allDots, viewer }) => {
+const PlanImage = ({ category, planImage, allDots, viewer }) => {
     //default style
     let style = { position: 'fixed', top: '5rem', width: 'auto', height: '10rem', zIndex: 1 }
     const [dotMatch, setDotMatch] = useState('entrance');
 
-    // make loftas floor plan wider by overriding default
-    if (plan && plan.includes('loftas') || plan && plan.includes('floorl'))
+    // make loftas floor planImage wider by overriding default
+    if ((planImage && planImage.includes('loftas')) || (planImage && planImage.includes('floorl')))
         style = Object.assign({}, style, { height: '12rem', width: '41rem' })
-    // make f and four floor plan heightened by overriding default
-    else if (plan && plan.includes('media/f')) {
+    // make f and four floor planImage heightened by overriding default
+    else if (planImage && planImage.includes('media/f')) {
         style = Object.assign({}, style, { width: '14rem', height: 'auto' })
     }
 
     useEffect(() => {
-        if(!plan) return;
-        if (plan.includes('entrance')) {
+        if(!planImage) return;
+        if (planImage.includes('entrance')) {
             setDotMatch('entrance')
-        } else if (plan.includes('loftas')) {
+        } else if (planImage.includes('loftas')) {
             setDotMatch('loftas');
-        } else if (plan.includes('media/four')) {
+        } else if (planImage.includes('media/four')) {
             setDotMatch('four');
-        } else if (plan.includes('media/f')) {
+        } else if (planImage.includes('media/f')) {
             setDotMatch('f');
         }
-    }, [category, plan])
+    }, [category, planImage])
 
     return (
         <>
-            <img style={style} src={plan} alt="" />
+            <img style={style} src={planImage} alt="" />
             <DotContainer viewer={viewer} allDots={allDots} dotMatch={dotMatch} />
         </>
     );
