@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pano/static/css/main.d6a14298.css",
-    "main.js": "/pano/static/js/main.57f2dfb3.js",
+    "main.js": "/pano/static/js/main.0caa9a4a.js",
     "static/media/l8.jpg": "/pano/static/media/l8.8c31c74ba656a6501aa8.jpg",
     "static/media/library2.jpg": "/pano/static/media/library2.932fa2a1d999d657430b.jpg",
     "static/media/lsk.jpg": "/pano/static/media/lsk.4a5c80d064af9e34b4c6.jpg",
@@ -57,14 +57,17 @@
     "static/media/l3.jpg": "/pano/static/media/l3.9ed062c588a3e26d2534.jpg",
     "static/media/stairs.jpg": "/pano/static/media/stairs.a807862e1715f2174ebc.jpg",
     "static/media/f.png": "/pano/static/media/f.71bab20f280b3ab45d64.png",
+    "static/media/floorfphoto.png": "/pano/static/media/floorfphoto.02a9d120b5dd64441e57.png",
     "static/media/four.png": "/pano/static/media/four.b6566a9b86ed9bdb535d.png",
+    "static/media/floor4gkd.png": "/pano/static/media/floor4gkd.1500f95f3ad8f640c514.png",
+    "static/media/floor4fashion.png": "/pano/static/media/floor4fashion.f87b1532a8f995dc0788.png",
     "static/media/entrance.png": "/pano/static/media/entrance.b11e63af6c0d3cc2c277.png",
     "index.html": "/pano/index.html",
     "main.d6a14298.css.map": "/pano/static/css/main.d6a14298.css.map",
-    "main.57f2dfb3.js.map": "/pano/static/js/main.57f2dfb3.js.map"
+    "main.0caa9a4a.js.map": "/pano/static/js/main.0caa9a4a.js.map"
   },
   "entrypoints": [
     "static/css/main.d6a14298.css",
-    "static/js/main.57f2dfb3.js"
+    "static/js/main.0caa9a4a.js"
   ]
 }
