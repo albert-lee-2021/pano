@@ -64,6 +64,18 @@
   z-index: 10;
 }
 
+.reset-btn {
+  display: inline-block;
+  z-index: 100;
+  min-height: 7rem;
+  height: 7rem;
+  width: 7rem;
+  margin-left: 3rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .btn {
   position: relative;
   display: inline-block;

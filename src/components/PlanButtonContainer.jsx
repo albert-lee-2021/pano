@@ -12,7 +12,7 @@ const PlanButtonContainer = ({ planImages, currentFloor, setCurrentFloor, catego
             {planImage ?
                 <PlanImage category={category} viewer={viewer} allDots={allDots} planImage={planImage} setPlanImage={setPlanImage}/> : ''
             }
-            <div className="btn" onClick={() => {window.location = window.location.href}}>Reset</div>
+            <div className="reset-btn" onClick={() => {window.location = window.location.href}}></div>
         </div>
     );
 };
