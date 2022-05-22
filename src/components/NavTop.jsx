@@ -4,6 +4,7 @@ import PlanButtonContainer from './PlanButtonContainer';
 const NavTop = ({ planImages, currentFloor, setCurrentFloor, planImage, setPlanImage, category, viewer, allDots, floors }) => {
   
   useEffect(() => {
+    if(!planImages[currentFloor]) return;
     let newPlanImage = planImages[currentFloor][category];
     if(!newPlanImage) {
       setPlanImage(floors[currentFloor]);
