@@ -32,14 +32,7 @@ const NavContainer = ({allDots, viewer, entered, setEntered}) => {
       'Entrance': entrance,
       'Loftas': loftas,
       'Floor 4': four,
-      'Floor F': f,
-  
-      //loftas categories
-      'Graphic Design': gd,
-      'Interior Design': id,
-      'Fashion Design': fd,
-      'Applied Photography': ap,
-      'Performance Acting': pa
+      'Floor F': f
     }
   );
 
