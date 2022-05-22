@@ -1,5 +1,5 @@
 import banner from './../assets/banner.png';
-
+import video from './../assets/test.mp4';
 const Banner = ({entered, setEntered}) => {
     return (
         <div id="banner">
@@ -8,6 +8,9 @@ const Banner = ({entered, setEntered}) => {
                 sessionStorage.setItem('opened', true);
                 setEntered(!entered)
             }}>Enter site</button>
+            <video width="750" height="500" autoplay="true" muted="true" playsinline >
+                <source src={video} type="video/mp4"/>
+            </video>
         </div>
     );
   };
