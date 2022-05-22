@@ -28,7 +28,7 @@ const Dot = ({ left, top, setDots, viewer, allDots, dotMatch, i }) => {
     }
 
     return (
-        <div style={(allDots[dotMatch][i].destination.src === viewer.current.panorama.src) ? {...unfocused, ...focused} : unfocused} onClick={handleClick}></div>
+        <div style={(allDots[dotMatch][i].destination.src === viewer.panorama.src) ? {...unfocused, ...focused} : unfocused} onClick={handleClick}></div>
     );
 };
 

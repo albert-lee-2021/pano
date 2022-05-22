@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import NavTop from "./NavTop";
 import NavLeft from "./NavLeft";
@@ -274,7 +274,7 @@ const NavContainer = ({entered, setEntered}) => {
     ]
   })
 
-  const viewer = useRef(
+  const viewer = useMemo(() =>
     new PANOLENS.Viewer({
     container: document.querySelector("#container"),
     cameraFov: 80,
@@ -283,7 +283,7 @@ const NavContainer = ({entered, setEntered}) => {
     autoRotateActivationDuration: 10000,
     autoHideInfospot: false,
     output: 'console'
-  }));
+  }), []);
 
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
@@ -401,7 +401,7 @@ const NavContainer = ({entered, setEntered}) => {
     fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
     f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
 
-    viewer.current.add(outside2, entrance, lsk, l8, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2,  stairs, koridorius4, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
+    viewer.add(outside2, entrance, lsk, l8, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2,  stairs, koridorius4, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
   }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l8, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
 
 
@@ -454,12 +454,12 @@ const NavContainer = ({entered, setEntered}) => {
         if (!c[i].className.includes('infospot')) c[i].remove();
       }
     }
-  })
+  }, [entered, category, currentFloor])
 
   return (
     <>
-      {entered ? <NavTop planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} planImage={planImage} setPlanImage={setPlanImage} category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} /> : ''}
-      {entered ? <NavLeft planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} planImage={planImage} setPlanImage={setPlanImage} category={category} setCategory={setCategory} /> : ''}
+      <NavTop planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} planImage={planImage} setPlanImage={setPlanImage} category={category} allDots={allDots} viewer={viewer} entered={entered} setEntered={setEntered} />
+      <NavLeft planImages={planImages} currentFloor={currentFloor} setCurrentFloor={setCurrentFloor} floors={floors} planImage={planImage} setPlanImage={setPlanImage} category={category} setCategory={setCategory} />
     </>
   );
 };

@@ -1,4 +1,3 @@
-import banner from './../assets/banner.png';
 import video from './../assets/testhighres.mp4';
 const Banner = ({entered, setEntered}) => {
     return (
