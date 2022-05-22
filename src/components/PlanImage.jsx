@@ -16,13 +16,13 @@ const PlanImage = ({ category, planImage, allDots, viewer }) => {
 
     useEffect(() => {
         if(!planImage) return;
-        if (planImage.includes('entrance')) {
+        if (planImage.includes('entrance.')) {
             setDotMatch('entrance')
-        } else if (planImage.includes('loftas')) {
+        } else if (planImage.includes('loftas.')) {
             setDotMatch('loftas');
-        } else if (planImage.includes('media/four')) {
+        } else if (planImage.includes('four.')) {
             setDotMatch('four');
-        } else if (planImage.includes('media/f')) {
+        } else if (planImage.includes('f.')) {
             setDotMatch('f');
         }
     }, [category, planImage])
