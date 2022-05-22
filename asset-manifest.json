@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pano/static/css/main.d6a14298.css",
-    "main.js": "/pano/static/js/main.dcee75e4.js",
+    "main.css": "/pano/static/css/main.1127eb51.css",
+    "main.js": "/pano/static/js/main.6b25476f.js",
     "static/media/l8.jpg": "/pano/static/media/l8.8c31c74ba656a6501aa8.jpg",
     "static/media/library2.jpg": "/pano/static/media/library2.932fa2a1d999d657430b.jpg",
     "static/media/lsk.jpg": "/pano/static/media/lsk.4a5c80d064af9e34b4c6.jpg",
@@ -38,9 +38,9 @@
     "static/media/lk2k.jpg": "/pano/static/media/lk2k.c3a45a59f311d8e5b47f.jpg",
     "static/media/fourone.jpg": "/pano/static/media/fourone.967c523f433e727e48c8.jpg",
     "static/media/fentrance.jpg": "/pano/static/media/fentrance.78a30bd9b9304e65a995.jpg",
+    "static/media/testhighres.mp4": "/pano/static/media/testhighres.c0ddf3b9fa5a2e748f69.mp4",
     "static/media/lt1.jpg": "/pano/static/media/lt1.1621015843195376dcaa.jpg",
     "static/media/f1.jpg": "/pano/static/media/f1.a81e355c8972eaa7c5c8.jpg",
-    "static/media/test.mp4": "/pano/static/media/test.40488b47f2e1588000a5.mp4",
     "static/media/outside.jpg": "/pano/static/media/outside.a5079598de6b5ac24418.jpg",
     "static/media/fourtwo.jpg": "/pano/static/media/fourtwo.127d567e5b184b51e51d.jpg",
     "static/media/entrance.jpg": "/pano/static/media/entrance.24bad7a780324c88d122.jpg",
@@ -64,11 +64,11 @@
     "static/media/floor4fashion.png": "/pano/static/media/floor4fashion.f87b1532a8f995dc0788.png",
     "static/media/entrance.png": "/pano/static/media/entrance.b11e63af6c0d3cc2c277.png",
     "index.html": "/pano/index.html",
-    "main.d6a14298.css.map": "/pano/static/css/main.d6a14298.css.map",
-    "main.dcee75e4.js.map": "/pano/static/js/main.dcee75e4.js.map"
+    "main.1127eb51.css.map": "/pano/static/css/main.1127eb51.css.map",
+    "main.6b25476f.js.map": "/pano/static/js/main.6b25476f.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6a14298.css",
-    "static/js/main.dcee75e4.js"
+    "static/css/main.1127eb51.css",
+    "static/js/main.6b25476f.js"
   ]
 }
