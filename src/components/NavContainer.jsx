@@ -53,7 +53,7 @@ import ls2s from './../assets/panos/ls2.jpg';
 import lt1s from './../assets/panos/lt1.jpg';
 import l8s from './../assets/panos/l8.jpg';
 
-// import hsimg from './../assets/hotspotimage.png';
+import hsimg from './../assets/infospots/hotspotimage.png';
 
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
@@ -87,8 +87,8 @@ const NavContainer = ({entered, setEntered}) => {
     for (let i = 0; i < infospots.length; i++) {
 
       //the 350 on the next line changes the infospot size
-      let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-
+      // let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+      let infospot = new PANOLENS.Infospot(350, 'https://images-na.ssl-images-amazon.com/images/I/61mtx+420hL._AC_US436_QL65_.jpg');
       //if the infospot exists, set it's position to the coordinates originally given
       if(infospots[i])
         infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
@@ -115,6 +115,24 @@ const NavContainer = ({entered, setEntered}) => {
     ]
   ), []);
   
+  // const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
+  const loftas3 = useMemo(() => panoWithInfoSpots(
+    loftas32,
+    [
+      //entrance info spots
+      {
+        coords: [-3730.63, 361.44, -3304,71],
+        text: 'Administration'
+      },
+      {
+        coords: [-1313.88, -1728.78, -4494.17],
+        text: 'spot 2'
+      },
+    ]
+  ), []);
+
+
+  
   const stairs = useMemo(() => new PANOLENS.ImagePanorama(stairs2), []);
   const koridorius4 = useMemo(() => new PANOLENS.ImagePanorama(koridorius4ds), []);
   const outside2 = useMemo(() => new PANOLENS.ImagePanorama(outside), []);
@@ -128,7 +146,7 @@ const NavContainer = ({entered, setEntered}) => {
   const fourdotthree = useMemo(() => new PANOLENS.ImagePanorama(fourthree), []);
   const loftas1 = useMemo(() => new PANOLENS.ImagePanorama(loftas12), []);
   const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
-  const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
+  // const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
   const fentrance = useMemo(() => new PANOLENS.ImagePanorama(fentrances), []);
   const fcenter = useMemo(() => new PANOLENS.ImagePanorama(fcenters), []);
   const f1 = useMemo(() => new PANOLENS.ImagePanorama(f1s), []);
