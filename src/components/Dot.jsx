@@ -24,7 +24,7 @@ const Dot = ({ left, top, setDots, viewer, allDots, dotMatch, i }) => {
             }
         }
         setDots({...allDots[dotMatch], ...newDot})
-        viewer.current.setPanorama(allDots[dotMatch][i].destination);
+        viewer.setPanorama(allDots[dotMatch][i].destination);
     }
 
     return (
