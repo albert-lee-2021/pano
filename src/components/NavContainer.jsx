@@ -125,46 +125,292 @@ const NavContainer = ({entered, setEntered}) => {
         text: 'Administration'
       },
       {
-        coords: [-1313.88, -1728.78, -4494.17],
-        text: 'spot 2'
+        coords: [3539.18, -2027.37, 2876.35],
+        text: 'Sign for coffee'
+      },
+      {
+        coords: [4617.09, 37.02, -1901.04],
+        text: 'Toilet'
+      },
+    ]
+  ), []);
+  
+  const loftas2 = useMemo(() => panoWithInfoSpots(
+    loftas22,
+    [
+      {
+        coords: [-4763.57, 80.59, -1501.93],
+        text: 'L1 Auditorium'
+      },
+      {
+        coords: [4575.39, 252.16, -1986.10],
+        text: 'Administration'
       },
     ]
   ), []);
 
 
+  const loftas1 = useMemo(() => panoWithInfoSpots(
+    loftas12,
+    [
+      {
+        coords: [4265.37, -46.05, -2596.40],
+        text: 'L1 Auditorium'
+      },
+      {
+        coords: [-581.21, -136.62, 4957.91],
+        text: 'Toilet'
+      },
+    ]
+  ), []);
+  
+  const loftoranas2 = useMemo(() => panoWithInfoSpots(
+    loftoranas2d,
+    [
+      {
+        coords: [-2917.08, 40.53, 4057.38],
+        text: 'Library'
+      },
+      {
+        coords: [-4671.31, -224.31, -1739.29],
+        text: 'Coffee'
+      },
+    ]
+
+  ), []);
+  const loftoranas1 = useMemo(() => panoWithInfoSpots(
+    loftoranas1d,
+    [
+      {
+        coords: [4448.37, 1059.53, -2011.17],
+        text: 'Menu'
+      },
+      {
+        coords: [-792.93, -240.22, -4920.26],
+        text: 'Coffee'
+      },
+    ]
+  ), []);
+  
+  const lk1k = useMemo(() => panoWithInfoSpots(
+    lk1ks,
+    [
+      {
+        coords: [3282.33, 306.81, 3751.51],
+        text: 'LK1 Auditorium'
+      },
+    ]
+  ), []);
+
+  const lk2k = useMemo(() => panoWithInfoSpots(
+    lk2ks,
+    [
+      {
+        coords: [-3394.40, 253.49, 3652.91],
+        text: 'LK2 Auditorium'
+      },
+      {
+        coords: [3486.17, 415.76, -3549.52],
+        text: 'L2 Auditorium'
+      },
+    ]
+  ), []);
+
+  const lsk = useMemo(() => panoWithInfoSpots(
+    lsks,
+    [
+      {
+        coords: [4783.37, 142.65, -1418.65],
+        text: 'L3 Auditorium'
+      },
+      {
+        coords: [-53.60, 89.55, 4993.67],
+        text: 'LS1 & LS2 Auditorium'
+      },
+    ]
+  ), []);
+
+  const lt1k = useMemo(() => panoWithInfoSpots(
+    lt1ks,
+    [
+      {
+        coords: [-4682.31, 186.80, -1714.75],
+        text: 'L3 Auditorium'
+      },
+      {
+        coords: [1.07, 705.31, 4947.48],
+        text: 'LT1 Auditorium'
+      },
+    ]
+  ), []);
+
+  const lt2k = useMemo(() => panoWithInfoSpots(
+    lt2ks,
+    [
+      {
+        coords: [-419.63, 451.62, 4955.57],
+        text: 'LT2 Entrance'
+      },
+      {
+        coords: [-4668.92, 230.95, 1744.78],
+        text: 'LT5 Auditorium'
+      },
+      {
+        coords: [2918.30, -217.36, -4048.31],
+        text: 'Toilets'
+      },
+    ]
+  ), []);
+
+  const ltk = useMemo(() => panoWithInfoSpots(
+    ltks,
+    [
+      {
+        coords: [4400.56, 620.68, 2268.41],
+        text: 'LJ'
+      },
+      {
+        coords: [4918.88, 350.48, -773.97],
+        text: 'L8 Auditorium'
+      },
+      {
+        coords: [3679.29, 164.87, -3372.94],
+        text: 'LD'
+      },
+    ]
+  ), []);
+  
+  const l10k = useMemo(() => panoWithInfoSpots(
+    l10ks,
+    [
+      {
+        coords: [4703.26, 165.03, -1662.54],
+        text: 'L9 Auditorium'
+      },
+      {
+        coords: [-1183.54, 506.90, -4822.20],
+        text: 'L10 Auditorium'
+      },
+      {
+        coords: [4271.03, 840.53, 2455.03],
+        text: 'L7 Auditorium'
+      },
+    ]
+  ), []);
+    
+  const ls1 = useMemo(() => panoWithInfoSpots(
+    ls1s,
+    [
+      {
+        coords: [-4671.10, -6.70, -1763.66],
+        text: 'LS2 Auditorium'
+      },
+    ]
+  ), []);
+  
+  const fourfloorstairs = useMemo(() => panoWithInfoSpots(
+    fourfloorstairss,
+    [
+      {
+        coords: [-169.98, 73.45, -4988.21],
+        text: '4 Auditorium'
+      },
+      {
+        coords: [3167.63, 258.33, 3846.85],
+        text: 'Toilets'
+      },
+    ]
+  ), []);
+
+  const koridorius4 = useMemo(() => panoWithInfoSpots(
+    koridorius4ds,
+    [
+      {
+        coords: [2165.56, 1074.52, 4366.36],
+        text: '4 Auditorium'
+      },
+    ]
+  ), []);
+  
+  const koridorius4d2 = useMemo(() => panoWithInfoSpots(
+    koridorius42,
+    [
+      {
+        coords: [4064.28, 984.77, 2722.60],
+        text: '1 Auditorium'
+      },
+      {
+        coords: [4835.36, 609.73, -1087.48],
+        text: '2 Auditorium'
+      },
+      {
+        coords: [-4887.09, 269.13, -995.09],
+        text: '3 Auditorium'
+      },
+    ]
+  ), []);
+   
+  const fcenter = useMemo(() => panoWithInfoSpots(
+    fcenters,
+    [
+      {
+        coords: [616.67, 521.45, -4926.68],
+        text: 'F3 Auditorium'
+      },
+      {
+        coords: [-3877.68, 103.39, -3139.21],
+        text: 'F2 Auditorium'
+      },
+      {
+        coords: [-4616.60, 418.23, 1854.87],
+        text: 'F1 Auditorium'
+      },
+      {
+        coords: [208.31, 212.53, 4980.73],
+        text: 'F4 Auditorium'
+      },
+      {
+        coords: [2771.28, 240.82, 4142.69],
+        text: 'F5 Auditorium'
+      },
+      {
+        coords: [4886.29, -0.63, 1056.08],
+        text: 'Technician'
+      },
+    ]
+  ), []);
   
   const stairs = useMemo(() => new PANOLENS.ImagePanorama(stairs2), []);
-  const koridorius4 = useMemo(() => new PANOLENS.ImagePanorama(koridorius4ds), []);
+  //const koridorius4 = useMemo(() => new PANOLENS.ImagePanorama(koridorius4ds), []);
   const outside2 = useMemo(() => new PANOLENS.ImagePanorama(outside), []);
   const tiltas2 = useMemo(() => new PANOLENS.ImagePanorama(tiltas), []);
-  const fourfloorstairs = useMemo(() => new PANOLENS.ImagePanorama(fourfloorstairss), []);
-  const koridorius4d2 = useMemo(() => new PANOLENS.ImagePanorama(koridorius42), []);
+  //const fourfloorstairs = useMemo(() => new PANOLENS.ImagePanorama(fourfloorstairss), []);
+  //const koridorius4d2 = useMemo(() => new PANOLENS.ImagePanorama(koridorius42), []);
   const fourdotfour = useMemo(() => new PANOLENS.ImagePanorama(fourfour), []);
   const fourdotfive = useMemo(() => new PANOLENS.ImagePanorama(fourfive), []);
   const fourdotone = useMemo(() => new PANOLENS.ImagePanorama(fourone), []);
   const fourdottwo = useMemo(() => new PANOLENS.ImagePanorama(fourtwo), []);
   const fourdotthree = useMemo(() => new PANOLENS.ImagePanorama(fourthree), []);
-  const loftas1 = useMemo(() => new PANOLENS.ImagePanorama(loftas12), []);
-  const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
-  // const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
+  //const loftas1 = useMemo(() => new PANOLENS.ImagePanorama(loftas12), []);
+  //const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
   const fentrance = useMemo(() => new PANOLENS.ImagePanorama(fentrances), []);
-  const fcenter = useMemo(() => new PANOLENS.ImagePanorama(fcenters), []);
+  //const fcenter = useMemo(() => new PANOLENS.ImagePanorama(fcenters), []);
   const f1 = useMemo(() => new PANOLENS.ImagePanorama(f1s), []);
   const f2 = useMemo(() => new PANOLENS.ImagePanorama(f2s), []);
   const f3 = useMemo(() => new PANOLENS.ImagePanorama(f3s), []);
   const f4 = useMemo(() => new PANOLENS.ImagePanorama(f4s), []);
   const f5 = useMemo(() => new PANOLENS.ImagePanorama(f5s), []);
-  const loftoranas1 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas1d), []);
-  const loftoranas2 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas2d), []);
+  //const loftoranas1 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas1d), []);
+  //const loftoranas2 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas2d), []);
   const library1 = useMemo(() => new PANOLENS.ImagePanorama(libraryd1), []);
   const library2 = useMemo(() => new PANOLENS.ImagePanorama(libraryd2), []);
-  const lk1k = useMemo(() => new PANOLENS.ImagePanorama(lk1ks), []);
-  const lk2k = useMemo(() => new PANOLENS.ImagePanorama(lk2ks), []);
-  const lsk = useMemo(() => new PANOLENS.ImagePanorama(lsks), []);
-  const lt1k = useMemo(() => new PANOLENS.ImagePanorama(lt1ks), []);
-  const lt2k = useMemo(() => new PANOLENS.ImagePanorama(lt2ks), []);
-  const ltk = useMemo(() => new PANOLENS.ImagePanorama(ltks), []);
-  const l10k = useMemo(() => new PANOLENS.ImagePanorama(l10ks), []);
+  //const lk1k = useMemo(() => new PANOLENS.ImagePanorama(lk1ks), []);
+  //const lk2k = useMemo(() => new PANOLENS.ImagePanorama(lk2ks), []);
+  //const lsk = useMemo(() => new PANOLENS.ImagePanorama(lsks), []);
+  //const lt1k = useMemo(() => new PANOLENS.ImagePanorama(lt1ks), []);
+  //const lt2k = useMemo(() => new PANOLENS.ImagePanorama(lt2ks), []);
+  //const ltk = useMemo(() => new PANOLENS.ImagePanorama(ltks), []);
+  //const l10k = useMemo(() => new PANOLENS.ImagePanorama(l10ks), []);
 // \/auditoriums
   const l1 = useMemo(() => new PANOLENS.ImagePanorama(l1s), []);
   const l2 = useMemo(() => new PANOLENS.ImagePanorama(l2s), []);
@@ -175,7 +421,7 @@ const NavContainer = ({entered, setEntered}) => {
   const l10 = useMemo(() => new PANOLENS.ImagePanorama(l10s), []);
   const lk1 = useMemo(() => new PANOLENS.ImagePanorama(lk1s), []);
   const lk2 = useMemo(() => new PANOLENS.ImagePanorama(lk2s), []);
-  const ls1 = useMemo(() => new PANOLENS.ImagePanorama(ls1s), []);
+  //const ls1 = useMemo(() => new PANOLENS.ImagePanorama(ls1s), []);
   const ls2 = useMemo(() => new PANOLENS.ImagePanorama(ls2s), []);
   const lj = useMemo(() => new PANOLENS.ImagePanorama(ljs), []);
   const ld = useMemo(() => new PANOLENS.ImagePanorama(lds), []);
