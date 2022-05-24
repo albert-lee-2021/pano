@@ -100,20 +100,7 @@ const NavContainer = ({entered, setEntered}) => {
     return pano;
   }
 
-  const entrance = useMemo(() => panoWithInfoSpots(
-    entrance2,
-    [
-      //entrance info spots
-      {
-        coords: [413.25, -217.35, -4969.80],
-        text: 'spot 1'
-      },
-      {
-        coords: [-1313.88, -1728.78, -4494.17],
-        text: 'spot 2'
-      },
-    ]
-  ), []);
+  const entrance = useMemo(() => panoWithInfoSpots(entrance2), []);
   
   // const loftas3 = useMemo(() => new PANOLENS.ImagePanorama(loftas32), []);
   const loftas3 = useMemo(() => panoWithInfoSpots(
