@@ -88,7 +88,7 @@ const NavContainer = ({entered, setEntered}) => {
 
       //the 350 on the next line changes the infospot size
       // let infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-      let infospot = new PANOLENS.Infospot(350, 'https://images-na.ssl-images-amazon.com/images/I/61mtx+420hL._AC_US436_QL65_.jpg');
+      let infospot = new PANOLENS.Infospot(350, window.location + '/spot.png');
       //if the infospot exists, set it's position to the coordinates originally given
       if(infospots[i])
         infospot.position.set(infospots[i].coords[0], infospots[i].coords[1], infospots[i].coords[2]);
