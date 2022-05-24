@@ -551,10 +551,10 @@ const NavContainer = ({entered, setEntered}) => {
 
   useEffect(() => {
     //first variable is the pano origin, second variable is the pano destination
-    //origin.link(destination, ...)
-    entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));
-    entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57)); //out
-    outside2.link(entrance, new THREE.Vector3(4980.96, 417.63, 12.00)); //in
+    //origin.link(destination, ..., 300, window.location + '/arrows/name.png');
+    entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));    
+    entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57));
+    outside2.link(entrance, new THREE.Vector3(4980.96, 417.63, 12.00), 300, window.location + '/arrows/arrow.png');
     stairs.link(entrance, new THREE.Vector3(3725.45, -3094.47, 1225.24)); //down
     stairs.link(tiltas2, new THREE.Vector3(4954.39, 531.99, -260.74)); //up
     tiltas2.link(stairs, new THREE.Vector3(-4873.73, -756.40, -773.44)); //down
