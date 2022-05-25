@@ -114,6 +114,10 @@ const NavContainer = ({entered, setEntered}) => {
         coords: [4617.09, 37.02, -1901.04],
         text: 'Toilet'
       },
+      {
+        coords: [4617.09, 37.02, -1901.04],
+        text: 'Toilet'
+      },
     ]
   ), []);
   
