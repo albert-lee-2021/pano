@@ -106,18 +106,17 @@ const NavContainer = ({entered, setEntered}) => {
   const loftas3 = useMemo(() => panoWithInfoSpots(
     loftas32,
     [
-      //entrance info spots
       {
         coords: [-3730.63, 361.44, -3304,71],
         text: 'Administration'
       },
       {
-        coords: [3539.18, -2027.37, 2876.35],
-        text: 'Sign for coffee'
-      },
-      {
         coords: [4617.09, 37.02, -1901.04],
         text: 'Toilet'
+      },
+      {
+        coords: [3523.24, -2087.39, 2852.13],
+        text: 'Sign for coffee'
       },
     ]
   ), []);
@@ -253,15 +252,15 @@ const NavContainer = ({entered, setEntered}) => {
     ltks,
     [
       {
-        coords: [4400.56, 620.68, 2268.41],
+        coords: [4342.12, 582.96, 2392.91],
         text: 'LJ'
       },
       {
-        coords: [4918.88, 350.48, -773.97],
+        coords: [4918.34, 334.50, -654.69],
         text: 'L8 Auditorium'
       },
       {
-        coords: [3679.29, 164.87, -3372.94],
+        coords: [3678.62, 180.92, -3192.10],
         text: 'LD'
       },
     ]
