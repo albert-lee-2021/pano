@@ -53,8 +53,6 @@ import ls2s from './../assets/panos/ls2.jpg';
 import lt1s from './../assets/panos/lt1.jpg';
 import l8s from './../assets/panos/l8.jpg';
 
-import hsimg from './../assets/infospots/hotspotimage.png';
-
 import * as PANOLENS from "panolens";
 import * as THREE from 'three';
 
@@ -98,6 +96,13 @@ const NavContainer = ({entered, setEntered}) => {
       pano.add(infospot);
     }
     return pano;
+  }
+
+  let linkPanos = async (origin, destination, coords=[], customImage=true) => {
+    if(customImage && coords.length === 3){
+      await origin.link(destination, new THREE.Vector3(coords[0], coords[1], coords[2]), 300, window.location + '/arrows/arrow.png');
+    } else
+      await origin.link(destination, new THREE.Vector3(coords[0], coords[1], coords[2]));
   }
 
   const entrance = useMemo(() => panoWithInfoSpots(entrance2), []);
@@ -367,37 +372,22 @@ const NavContainer = ({entered, setEntered}) => {
   ), []);
   
   const stairs = useMemo(() => new PANOLENS.ImagePanorama(stairs2), []);
-  //const koridorius4 = useMemo(() => new PANOLENS.ImagePanorama(koridorius4ds), []);
   const outside2 = useMemo(() => new PANOLENS.ImagePanorama(outside), []);
   const tiltas2 = useMemo(() => new PANOLENS.ImagePanorama(tiltas), []);
-  //const fourfloorstairs = useMemo(() => new PANOLENS.ImagePanorama(fourfloorstairss), []);
-  //const koridorius4d2 = useMemo(() => new PANOLENS.ImagePanorama(koridorius42), []);
   const fourdotfour = useMemo(() => new PANOLENS.ImagePanorama(fourfour), []);
   const fourdotfive = useMemo(() => new PANOLENS.ImagePanorama(fourfive), []);
   const fourdotone = useMemo(() => new PANOLENS.ImagePanorama(fourone), []);
   const fourdottwo = useMemo(() => new PANOLENS.ImagePanorama(fourtwo), []);
   const fourdotthree = useMemo(() => new PANOLENS.ImagePanorama(fourthree), []);
-  //const loftas1 = useMemo(() => new PANOLENS.ImagePanorama(loftas12), []);
-  //const loftas2 = useMemo(() => new PANOLENS.ImagePanorama(loftas22), []);
   const fentrance = useMemo(() => new PANOLENS.ImagePanorama(fentrances), []);
-  //const fcenter = useMemo(() => new PANOLENS.ImagePanorama(fcenters), []);
   const f1 = useMemo(() => new PANOLENS.ImagePanorama(f1s), []);
   const f2 = useMemo(() => new PANOLENS.ImagePanorama(f2s), []);
   const f3 = useMemo(() => new PANOLENS.ImagePanorama(f3s), []);
   const f4 = useMemo(() => new PANOLENS.ImagePanorama(f4s), []);
   const f5 = useMemo(() => new PANOLENS.ImagePanorama(f5s), []);
-  //const loftoranas1 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas1d), []);
-  //const loftoranas2 = useMemo(() => new PANOLENS.ImagePanorama(loftoranas2d), []);
   const library1 = useMemo(() => new PANOLENS.ImagePanorama(libraryd1), []);
   const library2 = useMemo(() => new PANOLENS.ImagePanorama(libraryd2), []);
-  //const lk1k = useMemo(() => new PANOLENS.ImagePanorama(lk1ks), []);
-  //const lk2k = useMemo(() => new PANOLENS.ImagePanorama(lk2ks), []);
-  //const lsk = useMemo(() => new PANOLENS.ImagePanorama(lsks), []);
-  //const lt1k = useMemo(() => new PANOLENS.ImagePanorama(lt1ks), []);
-  //const lt2k = useMemo(() => new PANOLENS.ImagePanorama(lt2ks), []);
-  //const ltk = useMemo(() => new PANOLENS.ImagePanorama(ltks), []);
-  //const l10k = useMemo(() => new PANOLENS.ImagePanorama(l10ks), []);
-// \/auditoriums
+
   const l1 = useMemo(() => new PANOLENS.ImagePanorama(l1s), []);
   const l2 = useMemo(() => new PANOLENS.ImagePanorama(l2s), []);
   const l3 = useMemo(() => new PANOLENS.ImagePanorama(l3s), []);
@@ -407,14 +397,12 @@ const NavContainer = ({entered, setEntered}) => {
   const l10 = useMemo(() => new PANOLENS.ImagePanorama(l10s), []);
   const lk1 = useMemo(() => new PANOLENS.ImagePanorama(lk1s), []);
   const lk2 = useMemo(() => new PANOLENS.ImagePanorama(lk2s), []);
-  //const ls1 = useMemo(() => new PANOLENS.ImagePanorama(ls1s), []);
   const ls2 = useMemo(() => new PANOLENS.ImagePanorama(ls2s), []);
   const lj = useMemo(() => new PANOLENS.ImagePanorama(ljs), []);
   const ld = useMemo(() => new PANOLENS.ImagePanorama(lds), []);
   const lt1 = useMemo(() => new PANOLENS.ImagePanorama(lt1s), []);
   const l8 = useMemo(() => new PANOLENS.ImagePanorama(l8s), []);
 
-  // const  = useMemo(() => new PANOLENS.ImagePanorama(), []);
 
   const [allDots] = useState({
     'entrance': [
@@ -536,120 +524,120 @@ const NavContainer = ({entered, setEntered}) => {
   }), []);
 
   useEffect(() => {
-    //first variable is the pano origin, second variable is the pano destination
-    //origin.link(destination, ..., 300, window.location + '/arrows/name.png');
-    entrance.link(stairs, new THREE.Vector3(4653.43, -1451.79, -1082.51));    
-    entrance.link(outside2, new THREE.Vector3(-4843.61, -276.14, -1173.57));
-    outside2.link(entrance, new THREE.Vector3(4980.96, 417.63, 12.00), 300, window.location + '/arrows/arrow.png');
-    stairs.link(entrance, new THREE.Vector3(3725.45, -3094.47, 1225.24)); //down
-    stairs.link(tiltas2, new THREE.Vector3(4954.39, 531.99, -260.74)); //up
-    tiltas2.link(stairs, new THREE.Vector3(-4873.73, -756.40, -773.44)); //down
-    tiltas2.link(fourfloorstairs, new THREE.Vector3(-4941.29, -748.93, -20.76)); //up
-    tiltas2.link(loftas1, new THREE.Vector3(4870.73, -1010.71, -424.59)); //tiltas > loftas 
-    loftas1.link(tiltas2, new THREE.Vector3(-4593.61, -1002.42, -1672.63)); //loftas > tiltas
+    //linkPanos(origin, destination, [x, y, z]);
+    linkPanos(outside2, entrance, [4980.96, 417.63, 12.00]);
+    linkPanos(entrance, stairs, [4653.43, -1451.79, -1082.51]);
+    linkPanos(entrance, stairs, [4653.43, -1451.79, -1082.51]);
+    linkPanos(entrance, outside2, [-4843.61, -276.14, -1173.57]);
+    linkPanos(stairs, tiltas2, [4954.39, 531.99, -260.74]); //up
+    linkPanos(stairs, entrance, [3725.45, -3094.47, 1225.24]);
+    linkPanos(tiltas2, stairs, [-4873.73, -756.40, -773.44]); //down
+    linkPanos(tiltas2, fourfloorstairs, [-4941.29, -748.93, -20.76]); //up
+    linkPanos(tiltas2, loftas1, [4870.73, -1010.71, -424.59]); //tiltas > loftas 
+    linkPanos(loftas1, tiltas2, [-4593.61, -1002.42, -1672.63]); //loftas > tiltas
     
     //floorL
-    loftas1.link(loftas2, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 1>2
-    loftas2.link(loftas1, new THREE.Vector3(-4897.78, -967.55, -72.38)); 
-    loftas2.link(loftas3, new THREE.Vector3(4857.09, -1078.47, -427.68)); //loftas 2>3
-    loftas3.link(loftas2, new THREE.Vector3(-4840.05, -1240.24, -23.10)); 
-    loftas3.link(loftoranas2, new THREE.Vector3(-398.44, -1315.36, 4799.19));
-    loftas2.link(loftoranas1, new THREE.Vector3(-231.37, -1376.61, 4790.67)); 
-    loftas2.link(loftoranas2, new THREE.Vector3(4038.42, -1245.60, 2655.35)); 
-    loftoranas1.link(loftas2, new THREE.Vector3(-1227.47, -1351.08, 4643.95)); 
-    loftoranas1.link(loftoranas2, new THREE.Vector3(-4699.17, -1266.09, -1113.90)); 
-    loftoranas2.link(loftas2, new THREE.Vector3(3551.28, -858.46, -3401.73)); 
-    loftoranas2.link(loftas3, new THREE.Vector3(4756.95, -1299.83, 763.61)); 
-    loftoranas2.link(loftoranas1, new THREE.Vector3(-81.60, -1242.02, -4836.48)); 
-    loftoranas2.link(library1, new THREE.Vector3(-2932.67, -1154.00, 3876.01)); 
-    library1.link(loftoranas2, new THREE.Vector3(-941.27, -652.66, 4859.56)); 
-    library1.link(library2, new THREE.Vector3(-1763.61, -1224.34, -4506.39)); 
-    library2.link(library1, new THREE.Vector3(154.43, -1267.75, -4825.41)); 
-    loftas3.link(lk1k, new THREE.Vector3(4902.25, -876.56, -332.34)); 
-    lk1k.link(lk2k, new THREE.Vector3(4871.19, -1113.92, 24.12)); 
-    lk1k.link(loftas3, new THREE.Vector3(-4922.33, -835.01, 106.94)); 
-    lk2k.link(lsk, new THREE.Vector3(4907.60, -930.07, 27.23)); 
-    lk2k.link(lk1k, new THREE.Vector3(-4834.63, -1224.92, 208.88)); 
-    lsk.link(lt1k, new THREE.Vector3(4866.63, -1119.28, -90.74)); 
-    lsk.link(lk2k, new THREE.Vector3(-4914.22, -901.67, -8.58)); 
-    lt1k.link(lt2k, new THREE.Vector3(4899.21, -968.01, 43.29)); 
-    lt1k.link(lsk, new THREE.Vector3(-4844.84, -1201.91, 137.94)); 
-    lt2k.link(ltk, new THREE.Vector3(3128.57, -872.04, 3789.44)); 
-    lt2k.link(lt1k, new THREE.Vector3(-3708.28, -1018.41, 3182.59));
-    ltk.link(lt2k, new THREE.Vector3(-4860.91, -1118.93, -201.22));
-    l10k.link(lt2k, new THREE.Vector3(4945.12, -708.68, -38.52));
-    lt2k.link(l10k, new THREE.Vector3(3744.60, -1097.39, -3112.81)); 
+    linkPanos(loftas1, loftas2, [4857.09, -1078.47, -427.68]); //loftas 1>2
+    linkPanos(loftas2, loftas1, [-4897.78, -967.55, -72.38]); 
+    linkPanos(loftas2, loftas3, [4857.09, -1078.47, -427.68]); //loftas 2>3
+    linkPanos(loftas3, loftas2, [-4840.05, -1240.24, -23.10]); 
+    linkPanos(loftas3, loftoranas2, [-398.44, -1315.36, 4799.19]);
+    linkPanos(loftas2, loftoranas1, [-231.37, -1376.61, 4790.67]); 
+    linkPanos(loftas2, loftoranas2, [4038.42, -1245.60, 2655.35]); 
+    linkPanos(loftoranas1, loftas2, [-1227.47, -1351.08, 4643.95]); 
+    linkPanos(loftoranas1, loftoranas2, [-4699.17, -1266.09, -1113.90]); 
+    linkPanos(loftoranas2, loftas2, [3551.28, -858.46, -3401.73]); 
+    linkPanos(loftoranas2, loftas3, [4756.95, -1299.83, 763.61]); 
+    linkPanos(loftoranas2, loftoranas1, [-81.60, -1242.02, -4836.48]); 
+    linkPanos(loftoranas2, library1, [-2932.67, -1154.00, 3876.01]); 
+    linkPanos(library1, loftoranas2, [-941.27, -652.66, 4859.56]); 
+    linkPanos(library1, library2, [-1763.61, -1224.34, -4506.39]); 
+    linkPanos(library2, library1, [154.43, -1267.75, -4825.41]); 
+    linkPanos(loftas3, lk1k, [4902.25, -876.56, -332.34]); 
+    linkPanos(lk1k, lk2k, [4871.19, -1113.92, 24.12]); 
+    linkPanos(lk1k, loftas3, [-4922.33, -835.01, 106.94]); 
+    linkPanos(lk2k, lsk, [4907.60, -930.07, 27.23]); 
+    linkPanos(lk2k, lk1k, [-4834.63, -1224.92, 208.88]); 
+    linkPanos(lsk, lt1k, [4866.63, -1119.28, -90.74]); 
+    linkPanos(lsk, lk2k, [-4914.22, -901.67, -8.58]); 
+    linkPanos(lt1k, lt2k, [4899.21, -968.01, 43.29]); 
+    linkPanos(lt1k, lsk, [-4844.84, -1201.91, 137.94]); 
+    linkPanos(lt2k, ltk, [3128.57, -872.04, 3789.44]); 
+    linkPanos(lt2k, lt1k, [-3708.28, -1018.41, 3182.59]);
+    linkPanos(ltk, lt2k, [-4860.91, -1118.93, -201.22]);
+    linkPanos(l10k, lt2k, [4945.12, -708.68, -38.52]);
+    linkPanos(lt2k, l10k, [3744.60, -1097.39, -3112.81]); 
 
-    loftas1.link(l1, new THREE.Vector3(4242.92, -647.23, -2550.70));
-    loftas2.link(l1, new THREE.Vector3(-4756.24, -436.92, -1461.67)); 
-    l1.link(loftas2, new THREE.Vector3(-2149.23, -605.32, -4432.29));
-    lk1k.link(lk1, new THREE.Vector3(3311.52, -1361.67, 3477.30)); 
-    lk1.link(lk1k, new THREE.Vector3(3516.03, -814.01, 3449.47)); 
-    lk2k.link(lk2, new THREE.Vector3(-3356.43, -1177.64, 3505.69));
-    lk2k.link(l2, new THREE.Vector3(3426.89, -1280.19, -3394.38));
-    lk2.link(lk2k, new THREE.Vector3(-3005.80, -1710.97, 3597.83));
-    l2.link(lk2k, new THREE.Vector3(-4814.39, -926.77, -945.00));
-    lsk.link(ls1, new THREE.Vector3(-36.98, -351.72, 4984.24)); 
-    lsk.link(l3, new THREE.Vector3(4794.12, -388.38, -1341.27)); 
-    ls1.link(lsk, new THREE.Vector3(2785.62, -457.67, -4117.08)); 
-    ls1.link(ls2, new THREE.Vector3(-2342.27, -551.74, -4372.07)); 
-    ls2.link(ls1, new THREE.Vector3(3839.85, -573.80, -3133.82)); 
-    lt1k.link(l3, new THREE.Vector3(-4644.00, -437.45, -1777.14)); 
-    lt1k.link(lt1, new THREE.Vector3(307.56, -1621.37, 4711.02)); 
-    l3.link(lt1k, new THREE.Vector3(2333.98, -459.01, -4388.59)); 
-    lt2k.link(lt1, new THREE.Vector3(-532.82, -1147.11, 4835.36)); 
-    lt1.link(lt1k, new THREE.Vector3(-4869.84, -1056.77, -266.71)); 
-    lt2k.link(l5, new THREE.Vector3(-4592.16, -789.53, 1794.41)); 
-    l5.link(lt2k, new THREE.Vector3(-4006.18, -851.99, 2860.51)); 
-    ltk.link(lj, new THREE.Vector3(4238.11, -1194.30, 2359.91));
-    lj.link(ltk, new THREE.Vector3(-4916.68, -534.56, -669.88));
-    ltk.link(ld, new THREE.Vector3(3673.69, -1405.72, -3071.60));
-    ld.link(ltk, new THREE.Vector3(-609.17, -411.75, -4940.99));
-    ltk.link(l8, new THREE.Vector3(4880.74, -801.81, -684.75));
-    l10k.link(l9, new THREE.Vector3(4665.40, -550.99, -1683.94));
-    l9.link(l10k, new THREE.Vector3(-4521.77, -422.68, 2082.06));
-    l10k.link(l10, new THREE.Vector3(-1350.30, -1364.44, -4607.15));
-    l10.link(l10k, new THREE.Vector3(4411.27, -318.46, -2313.22));
-    l10k.link(l7, new THREE.Vector3(4235.78, -1165.03, 2382.23));
-    l7.link(l10k, new THREE.Vector3(-4801.88, -1023.34, -901.36));
-    l8.link(ltk, new THREE.Vector3(4433.86, -790.32, -2157.44));
+    linkPanos(loftas1, l1, [4242.92, -647.23, -2550.70]);
+    linkPanos(loftas2, l1, [-4756.24, -436.92, -1461.67]); 
+    linkPanos(l1, loftas2, [-2149.23, -605.32, -4432.29]);
+    linkPanos(lk1k, lk1, [3311.52, -1361.67, 3477.30]); 
+    linkPanos(lk1, lk1k, [3516.03, -814.01, 3449.47]); 
+    linkPanos(lk2k, lk2, [-3356.43, -1177.64, 3505.69]);
+    linkPanos(lk2k, l2, [3426.89, -1280.19, -3394.38]);
+    linkPanos(lk2, lk2k, [-3005.80, -1710.97, 3597.83]);
+    linkPanos(l2, lk2k, [-4814.39, -926.77, -945.00]);
+    linkPanos(lsk, ls1, [-36.98, -351.72, 4984.24]); 
+    linkPanos(lsk, l3, [4794.12, -388.38, -1341.27]); 
+    linkPanos(ls1, lsk, [2785.62, -457.67, -4117.08]); 
+    linkPanos(ls1, ls2, [-2342.27, -551.74, -4372.07]); 
+    linkPanos(ls2, ls1, [3839.85, -573.80, -3133.82]); 
+    linkPanos(lt1k, l3, [-4644.00, -437.45, -1777.14]); 
+    linkPanos(lt1k, lt1, [307.56, -1621.37, 4711.02]); 
+    linkPanos(l3, lt1k, [2333.98, -459.01, -4388.59]); 
+    linkPanos(lt2k, lt1, [-532.82, -1147.11, 4835.36]); 
+    linkPanos(lt1, lt1k, [-4869.84, -1056.77, -266.71]); 
+    linkPanos(lt2k, l5, [-4592.16, -789.53, 1794.41]); 
+    linkPanos(l5, lt2k, [-4006.18, -851.99, 2860.51]); 
+    linkPanos(ltk, lj, [4238.11, -1194.30, 2359.91]);
+    linkPanos(lj, ltk, [-4916.68, -534.56, -669.88]);
+    linkPanos(ltk, ld, [3673.69, -1405.72, -3071.60]);
+    linkPanos(ld, ltk, [-609.17, -411.75, -4940.99]);
+    linkPanos(ltk, l8, [4880.74, -801.81, -684.75]);
+    linkPanos(l10k, l9, [4665.40, -550.99, -1683.94]);
+    linkPanos(l9, l10k, [-4521.77, -422.68, 2082.06]);
+    linkPanos(l10k, l10, [-1350.30, -1364.44, -4607.15]);
+    linkPanos(l10, l10k, [4411.27, -318.46, -2313.22]);
+    linkPanos(l10k, l7, [4235.78, -1165.03, 2382.23]);
+    linkPanos(l7, l10k, [-4801.88, -1023.34, -901.36]);
+    linkPanos(l8, ltk, [4433.86, -790.32, -2157.44]);
 
-    //     .link(, new THREE.Vector3()); 
+    //     .link(, new THREE.Vector3(), 300, window.location + '/arrows/arrow.png'); 
 
     //floor 4
-    fourfloorstairs.link(koridorius4, new THREE.Vector3(-2849.17, -3480.70, 2172.33));
-    fourfloorstairs.link(fourdotfour, new THREE.Vector3(218.49, -1669.38, -4697.98));
-    fourfloorstairs.link(tiltas2, new THREE.Vector3(2943.27, -3890.67, 1067.96));
-    koridorius4.link(fourfloorstairs, new THREE.Vector3(4204.75, -866.53, -2549.42));
-    fourdotfour.link(fourfloorstairs, new THREE.Vector3(4787.39, -775.48, -1190.78)); //4.4 out
-    koridorius4.link(koridorius4d2, new THREE.Vector3(-4894.50, -640.35, 729.99));
-    koridorius4.link(fourdotfive, new THREE.Vector3(2328.11, -2134.52, 3867.19));
-    fourdotfive.link(koridorius4, new THREE.Vector3(1531.36, -825.21, 4685.55)); //4.5 out
-    fourdotfive.link(fourdotthree, new THREE.Vector3(4600.09, -930.60, 1695.57)); //4.5 > 4.3
-    koridorius4d2.link(koridorius4, new THREE.Vector3(-4975.22, -391.26, 179.52));
-    koridorius4d2.link(fourdotone, new THREE.Vector3(3988.02, -1708.73, 2467.40));
-    fourdotone.link(koridorius4d2, new THREE.Vector3(-1093.54, -975.53, -4772.87)); //4.1 out
-    koridorius4d2.link(fourdottwo, new THREE.Vector3(4817.75, -884.02, -978.08));
-    fourdottwo.link(koridorius4d2, new THREE.Vector3(-4193.43, -1405.33, -2316.68)); //4.2 out
-    koridorius4d2.link(fourdotthree, new THREE.Vector3(-4827.34, -798.85, -1025.67));
-    fourdotthree.link(koridorius4d2, new THREE.Vector3(-4900.69, -870.69, 384.46)); //4.3 out
-    fourdotthree.link(fourdotfive, new THREE.Vector3(-997.88, -3522.27, -3400.54)); //4.3 > 4.5
+    linkPanos(fourfloorstairs, koridorius4, [-2849.17, -3480.70, 2172.33]);
+    linkPanos(fourfloorstairs, fourdotfour, [218.49, -1669.38, -4697.98]);
+    linkPanos(fourfloorstairs, tiltas2, [2943.27, -3890.67, 1067.96]);
+    linkPanos(koridorius4, fourfloorstairs, [4204.75, -866.53, -2549.42]);
+    linkPanos(fourdotfour, fourfloorstairs, [4787.39, -775.48, -1190.78]); //4.4 out
+    linkPanos(koridorius4, koridorius4d2, [-4894.50, -640.35, 729.99]);
+    linkPanos(koridorius4, fourdotfive, [2328.11, -2134.52, 3867.19]);
+    linkPanos(fourdotfive, koridorius4, [1531.36, -825.21, 4685.55]); //4.5 out
+    linkPanos(fourdotfive, fourdotthree, [4600.09, -930.60, 1695.57]); //4.5 > 4.3
+    linkPanos(koridorius4d2, koridorius4, [-4975.22, -391.26, 179.52]);
+    linkPanos(koridorius4d2, fourdotone, [3988.02, -1708.73, 2467.40]);
+    linkPanos(fourdotone, koridorius4d2, [-1093.54, -975.53, -4772.87]); //4.1 out
+    linkPanos(koridorius4d2, fourdottwo, [4817.75, -884.02, -978.08]);
+    linkPanos(fourdottwo, koridorius4d2, [-4193.43, -1405.33, -2316.68]); //4.2 out
+    linkPanos(koridorius4d2, fourdotthree, [-4827.34, -798.85, -1025.67]);
+    linkPanos(fourdotthree, koridorius4d2, [-4900.69, -870.69, 384.46]); //4.3 out
+    linkPanos(fourdotthree, fourdotfive, [-997.88, -3522.27, -3400.54]); //4.3 > 4.5
     
     //Photo floor
-    outside2.link(fentrance, new THREE.Vector3(443.24, 53.71, 4974.66)); 
-    fentrance.link(outside2, new THREE.Vector3(-4415.62, 1558.35, -1734.37)); // to college entrance
-    fentrance.link(fcenter, new THREE.Vector3(4272.43, -2056.22, 1558.92));
-    fcenter.link(f1, new THREE.Vector3(-4458.25, -1214.17, 1897.02));
-    fcenter.link(fentrance, new THREE.Vector3(4868.78, 115.29, -1104.05));
-    f1.link(fcenter, new THREE.Vector3(4752.92, -1482.75, 380.56));
-    fcenter.link(f2, new THREE.Vector3(-3739.14, -909.05, -3179.00));
-    f2.link(fcenter, new THREE.Vector3(-2029.04, -1158.68, -4417.16));
-    fcenter.link(f3, new THREE.Vector3(673.81, -1369.85, -4751.21));
-    f3.link(fcenter, new THREE.Vector3(293.76, -1155.07, -4848.87));
-    fcenter.link(f4, new THREE.Vector3(162.37, -683.65, 4941.59));
-    f4.link(fcenter, new THREE.Vector3(-4513.10, -852.68, -1965.36));
-    fcenter.link(f5, new THREE.Vector3(2745.75, -695.35, 4109.47));
-    f5.link(fcenter, new THREE.Vector3(1275.15, -693.69, -4774.80));
+    linkPanos(outside2, fentrance, [443.24, 53.71, 4974.66]); 
+    linkPanos(fentrance, outside2, [-4415.62, 1558.35, -1734.37]); // to college entrance
+    linkPanos(fentrance, fcenter, [4272.43, -2056.22, 1558.92]);
+    linkPanos(fcenter, f1, [-4458.25, -1214.17, 1897.02]);
+    linkPanos(fcenter, fentrance, [4868.78, 115.29, -1104.05]);
+    linkPanos(f1, fcenter, [4752.92, -1482.75, 380.56]);
+    linkPanos(fcenter, f2, [-3739.14, -909.05, -3179.00]);
+    linkPanos(f2, fcenter, [-2029.04, -1158.68, -4417.16]);
+    linkPanos(fcenter, f3, [673.81, -1369.85, -4751.21]);
+    linkPanos(f3, fcenter, [293.76, -1155.07, -4848.87]);
+    linkPanos(fcenter, f4, [162.37, -683.65, 4941.59]);
+    linkPanos(f4, fcenter, [-4513.10, -852.68, -1965.36]);
+    linkPanos(fcenter, f5, [2745.75, -695.35, 4109.47]);
+    linkPanos(f5, fcenter, [1275.15, -693.69, -4774.80]);
 
     viewer.add(outside2, entrance, lsk, l8, lt1, l10k, lk1k, lk2k, lt1k, lt2k, ltk, l1, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld, library1, library2, loftoranas1, loftoranas2,  stairs, koridorius4, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, tiltas2);
   }, [l10k, lk1k, lk2k, lsk, lt1k, lt2k, ltk, l1, l8, l2, l3, l5, l7, l9, l10, lk1, lk2, ls1, ls2, lj, ld ,lt1, library1, library2, loftoranas2, loftoranas1, entrance, koridorius4, stairs, outside2, tiltas2, fourfloorstairs, koridorius4d2, fourdotfive, fourdotfour, fourdotone, fourdottwo, fourdotthree, loftas1, loftas2, loftas3, f1, f2, f3, f4, f5, fentrance, fcenter, viewer]);
