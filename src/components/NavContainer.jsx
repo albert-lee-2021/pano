@@ -145,7 +145,7 @@ const NavContainer = ({entered, setEntered}) => {
     loftas12,
     [
       {
-        coords: [4265.37, -46.05, -2596.40],
+        coords: [4273.82, -87.85, -2558.36],
         text: 'L1 Auditorium'
       },
       {
@@ -159,7 +159,7 @@ const NavContainer = ({entered, setEntered}) => {
     loftoranas2d,
     [
       {
-        coords: [-2917.08, 40.53, 4057.38],
+        coords: [-2929.50, -138.33, 4014.77],
         text: 'Library'
       },
       {
@@ -187,7 +187,7 @@ const NavContainer = ({entered, setEntered}) => {
     lk1ks,
     [
       {
-        coords: [3282.33, 306.81, 3751.51],
+        coords: [3403.30, 130.50, 3598.37],
         text: 'LK1 Auditorium'
       },
     ]
@@ -239,7 +239,7 @@ const NavContainer = ({entered, setEntered}) => {
     lt2ks,
     [
       {
-        coords: [-419.63, 451.62, 4955.57],
+        coords: [-266.48, 586.07, 4947.69],
         text: 'LT2 Entrance'
       },
       {
@@ -257,15 +257,15 @@ const NavContainer = ({entered, setEntered}) => {
     ltks,
     [
       {
-        coords: [4342.12, 582.96, 2392.91],
+        coords: [4355.40, 743.66, 2305.92],
         text: 'LJ'
       },
       {
-        coords: [4918.34, 334.50, -654.69],
+        coords: [4922.81, 494.01, -646.77],
         text: 'L8 Auditorium'
       },
       {
-        coords: [3678.62, 180.92, -3192.10],
+        coords: [3683.39, 254.70, -3225.77],
         text: 'LD'
       },
     ]
@@ -317,8 +317,8 @@ const NavContainer = ({entered, setEntered}) => {
     koridorius4ds,
     [
       {
-        coords: [2165.56, 1074.52, 4366.36],
-        text: '4 Auditorium'
+        coords: [1779.25, 1041.22, 4544.43],
+        text: '5 Auditorium'
       },
     ]
   ), []);
@@ -327,11 +327,11 @@ const NavContainer = ({entered, setEntered}) => {
     koridorius42,
     [
       {
-        coords: [4064.28, 984.77, 2722.60],
+        coords: [3867.74, 965.80, 3002.29],
         text: '1 Auditorium'
       },
       {
-        coords: [4835.36, 609.73, -1087.48],
+        coords: [4781.33, 662.24, -1265.11],
         text: '2 Auditorium'
       },
       {
@@ -345,23 +345,23 @@ const NavContainer = ({entered, setEntered}) => {
     fcenters,
     [
       {
-        coords: [616.67, 521.45, -4926.68],
+        coords: [404.41, 575.71, -4941.68],
         text: 'F3 Auditorium'
       },
       {
-        coords: [-3877.68, 103.39, -3139.21],
+        coords: [-3734.00, 212.65, -3243.71],
         text: 'F2 Auditorium'
       },
       {
-        coords: [-4616.60, 418.23, 1854.87],
+        coords: [-4662.03, 558.75, 1690.17],
         text: 'F1 Auditorium'
       },
       {
-        coords: [208.31, 212.53, 4980.73],
+        coords: [407.63, 304.65, 4966.67],
         text: 'F4 Auditorium'
       },
       {
-        coords: [2771.28, 240.82, 4142.69],
+        coords: [2917.24, 349.92, 4041.40],
         text: 'F5 Auditorium'
       },
       {
@@ -614,7 +614,7 @@ const NavContainer = ({entered, setEntered}) => {
     linkPanos(koridorius4, fourdotfive, [2328.11, -2134.52, 3867.19]);
     linkPanos(fourdotfive, koridorius4, [1531.36, -825.21, 4685.55]); //4.5 out
     linkPanos(fourdotfive, fourdotthree, [4600.09, -930.60, 1695.57]); //4.5 > 4.3
-    linkPanos(koridorius4d2, koridorius4, [-4975.22, -391.26, 179.52]);
+    linkPanos(koridorius4d2, koridorius4, [-4929.57, -782.13, 169.35]);
     linkPanos(koridorius4d2, fourdotone, [3988.02, -1708.73, 2467.40]);
     linkPanos(fourdotone, koridorius4d2, [-1093.54, -975.53, -4772.87]); //4.1 out
     linkPanos(koridorius4d2, fourdottwo, [4817.75, -884.02, -978.08]);
