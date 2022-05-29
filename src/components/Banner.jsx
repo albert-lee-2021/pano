@@ -5,7 +5,7 @@ const Banner = ({entered, setEntered}) => {
             <div className="enter-button" onClick={() => {
                 setEntered(!entered)
             }}></div>
-            <video width="1879" height="1008" autoPlay={true} muted={true} playsInline >
+            <video width="100%" height="100%" autoPlay={true} muted={true} playsInline >
                 <source src={video} type="video/mp4"/>
             </video>
         </div>

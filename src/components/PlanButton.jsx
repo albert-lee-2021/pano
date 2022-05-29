@@ -23,7 +23,7 @@ const PlanButton = ({ planImages, category, currentFloor, setCurrentFloor, name,
         <div>
             <div className={name === currentFloor ? 'test btn' : 'btn'} onClick={handleClick}>
                 <svg>
-                    <rect x="0" y="0" fill="none" width="166" height="45" />
+                    <rect x="0" y="0" fill="none"/>
                 </svg>
                 {name}
             </div>
