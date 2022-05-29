@@ -167,9 +167,14 @@ rect {
 
   .dot-container {
     left: 72px;
+    top: 82px;
   }
   
   .plan-button-container {
-    margin: 1rem 8rem;
+    margin: 0 8rem;
+  }
+
+  #nav-left {
+    margin-top: 0;
   }
 }
